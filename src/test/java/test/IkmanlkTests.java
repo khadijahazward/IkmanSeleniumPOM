@@ -6,13 +6,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
+
 import pages.*;
+import pages.electroniccategories.ComputerAccessories;
+import pages.electroniccategories.ComputersTablets;
+import pages.electroniccategories.MobilePhoneAccessories;
+import pages.electroniccategories.MobilePhones;
 import utilities.Utility;
 
 import java.time.Duration;
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class IkmanlkTests extends Utility {
     public final String URL = "https://ikman.lk/";
@@ -27,6 +29,9 @@ public class IkmanlkTests extends Utility {
         return Utility.readTestDataFile(1);
     }
 
+    @DataProvider
+    public static Object[][] dataForSortResultsByOption() { return Utility.readTestDataFile(2);}
+
     @Test(dataProvider = "dataForTestCategory")
     public void testCategoryInHomePage(String location, String subLocation, String category) {
         BasePage basePage = PageFactory.initElements(browserFactory.getDriver(), BasePage.class);
@@ -36,6 +41,7 @@ public class IkmanlkTests extends Utility {
         homePage.selectLocalArea(subLocation);
         BasePage page = homePage.selectCategory(category);
 
+        // Checks the type of the page object and verifies that the PageTitle element is displayed.
         if (page instanceof PropertiesPage){
             PropertiesPage propertiesPage = (PropertiesPage) page;
             Assert.assertTrue(propertiesPage.PageTitle.isDisplayed(),
@@ -71,13 +77,13 @@ public class IkmanlkTests extends Utility {
         IkmanHomePage homePage = basePage.loadURL(URL);
         SearchResultPage searchResultPage = homePage.enterSearchText(searchQuery);
 
+        // Waits until the search result heading is loaded
         WebDriverWait wait = new WebDriverWait(browserFactory.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(searchResultPage.searchResultHeading));
 
         String resultText = searchResultPage.searchResultHeading.getText().toLowerCase();
-
         searchQuery = searchQuery.toLowerCase() + " in sri lanka";
-        System.out.println(searchQuery + "  " + resultText);
+
         // Checks if the heading contains the search query.
         Assert.assertTrue(resultText.contains(searchQuery));
 
@@ -91,4 +97,36 @@ public class IkmanlkTests extends Utility {
                     "Search results are not displayed for: " + searchQuery);
         }
     }
+
+    @Test(dataProvider = "dataForSortResultsByOption")
+    public void testSortOptions(String optionId, String expectedOptionText, String pageType) {
+        BasePage basePage = PageFactory.initElements(browserFactory.getDriver(), BasePage.class);
+        IkmanHomePage homePage = basePage.loadURL(URL);
+        BasePage page = homePage.selectCategory(pageType);
+        page.selectSortOption(optionId);
+        String selectedSortText = page.sortResultsByButton.getText();
+        Assert.assertTrue(selectedSortText.contains(expectedOptionText));
+    }
+
+    @Test
+    public void testFiltersInMobilePhonesPage() {
+        BasePage basePage = PageFactory.initElements(browserFactory.getDriver(), BasePage.class);
+        IkmanHomePage homePage = basePage.loadURL(URL);
+        ElectronicsPage page = homePage.selectCategory("Electronics");
+        MobilePhones mobilePhones = (MobilePhones) page.navigateToCategory("Mobile Phones");
+        mobilePhones.scrollPage(0,800);
+//        mobilePhones.selectAdType("For Sale"); // For sale, Wanted
+//        mobilePhones.selectCondition("New"); // New, Used (wanted doesnt have this)
+//        mobilePhones.setPriceRange(50000, 100000);
+        mobilePhones.selectBrandAndModel("Samsung", "Galaxy A15");
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    // test filters in mobile phone page
+    // test filters in accessories page
+
 }

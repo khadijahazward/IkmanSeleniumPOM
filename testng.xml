@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/src/SQA Projects/pageobjectmodel-amazon">
+<suite name="All Test Suite" parallel="methods" thread-count="4">
+    <test verbose="2" preserve-order="true" name="C:/src/SQA Projects/pageobjectmodel-ikmanlk">
         <classes>
             <class name="test.IkmanlkTests">
                 <methods>
-                    <include name="testSearch"/>
+<!--                    <include name="testCategoryInHomePage"/>-->
+<!--                    <include name="testSearchFunctionality"/>-->
+                    <include name="testSortOptions"/>
                 </methods>
             </class>
         </classes>

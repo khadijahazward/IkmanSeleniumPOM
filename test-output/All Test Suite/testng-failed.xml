@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="4" parallel="methods" name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="4" parallel="methods" name="C:/src/SQA Projects/pageobjectmodel-ikmanlk(failed)">
+    <classes>
+      <class name="test.IkmanlkTests">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="initializeBrowser"/>
+          <include name="testSortOptions" invocation-numbers="0 1 2"/>
+        </methods>
+      </class> <!-- test.IkmanlkTests -->
+    </classes>
+  </test> <!-- C:/src/SQA Projects/pageobjectmodel-ikmanlk(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
