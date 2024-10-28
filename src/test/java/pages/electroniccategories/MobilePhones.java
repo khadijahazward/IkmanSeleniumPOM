@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import pages.ElectronicsPage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -52,7 +51,7 @@ public class MobilePhones extends ElectronicsPage {
     @FindBy(xpath = "(//button[text() = 'Apply'])[2]")
     public WebElement applyButtonForBrand;
 
-    @FindBy(xpath = "//input[@placeholder='Add another brand']")
+    @FindBy(xpath = "//input[@placeholder='Select brand']")
     public WebElement brandSearchField;
 
     public MobilePhones(WebDriver driver) {
@@ -101,18 +100,20 @@ public class MobilePhones extends ElectronicsPage {
         jsExecutor.executeScript("arguments[0].click();", targetElement);
     }
 
-    public void setPriceRange(int min, int max) {
+    public void setPriceRange(Double min, Double max) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(priceDropDown)).click();
+        if (min != null){
+            wait.until(ExpectedConditions.visibilityOf(minPrice));
+            minPrice.clear();
+            minPrice.sendKeys(String.valueOf(min));
+        }
 
-        wait.until(ExpectedConditions.visibilityOf(minPrice));
-        minPrice.clear();
-        minPrice.sendKeys(String.valueOf(min));
-
-        wait.until(ExpectedConditions.visibilityOf(maxPrice));
-        maxPrice.clear();
-        maxPrice.sendKeys(String.valueOf(max));
-
+        if (max != null) {
+            wait.until(ExpectedConditions.visibilityOf(maxPrice));
+            maxPrice.clear();
+            maxPrice.sendKeys(String.valueOf(max));
+        }
         applyRangeButtonForPrice.click();
     }
 
@@ -131,15 +132,18 @@ public class MobilePhones extends ElectronicsPage {
         WebElement brandOption = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(brandXpath)));
         brandOption.click();
 
-        // Open the model dropdown and type the model name
-        wait.until(ExpectedConditions.visibilityOf(modelSearchField));
-        modelSearchField.clear();
-        modelSearchField.sendKeys(modelName);
+        // If model name is given.
+        if (modelName != null && !modelName.isEmpty()) {
+            // Opens the model dropdown and types the model name.
+            wait.until(ExpectedConditions.visibilityOf(modelSearchField));
+            modelSearchField.clear();
+            modelSearchField.sendKeys(modelName);
 
-        // Waits for the dropdown results to appear and selects the model.
-        String modelXpath = String.format("//li[contains(text(), '%s')]", modelName);
-        WebElement modelOption = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(modelXpath)));
-        modelOption.click();
+            // Waits for the dropdown results to appear and selects the model.
+            String modelXpath = String.format("//li[contains(text(), '%s')]", modelName);
+            WebElement modelOption = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(modelXpath)));
+            modelOption.click();
+        }
 
         applyButtonForBrand.click();
     }

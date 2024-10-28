@@ -46,7 +46,8 @@ public class Utility {
                     if (cell != null) {
                         switch (cell.getCellType()) {
                             case STRING:
-                                content[i][j] = cell.getStringCellValue();
+                                String cellValue = cell.getStringCellValue();
+                                content[i][j] = "null".equalsIgnoreCase(cellValue) ? null : cellValue;
                                 break;
                             case NUMERIC:
                                 content[i][j] = cell.getNumericCellValue();

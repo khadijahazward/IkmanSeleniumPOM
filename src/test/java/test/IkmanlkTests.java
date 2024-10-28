@@ -15,6 +15,7 @@ import pages.electroniccategories.MobilePhones;
 import utilities.Utility;
 
 import java.time.Duration;
+import java.util.Arrays;
 
 public class IkmanlkTests extends Utility {
     public final String URL = "https://ikman.lk/";
@@ -31,6 +32,11 @@ public class IkmanlkTests extends Utility {
 
     @DataProvider
     public static Object[][] dataForSortResultsByOption() { return Utility.readTestDataFile(2);}
+
+    @DataProvider
+    public static Object[][] dataForMobilePhonesPageFilters() {
+        return Utility.readTestDataFile(3);
+    }
 
     @Test(dataProvider = "dataForTestCategory")
     public void testCategoryInHomePage(String location, String subLocation, String category) {
@@ -108,25 +114,59 @@ public class IkmanlkTests extends Utility {
         Assert.assertTrue(selectedSortText.contains(expectedOptionText));
     }
 
-    @Test
-    public void testFiltersInMobilePhonesPage() {
+    @Test(dataProvider = "dataForMobilePhonesPageFilters")
+    public void testFiltersInMobilePhonesPage(String adType, String brandName, String modelName,
+                                              String condition, Double minPrice, Double maxPrice) {
         BasePage basePage = PageFactory.initElements(browserFactory.getDriver(), BasePage.class);
         IkmanHomePage homePage = basePage.loadURL(URL);
         ElectronicsPage page = homePage.selectCategory("Electronics");
         MobilePhones mobilePhones = (MobilePhones) page.navigateToCategory("Mobile Phones");
+
         mobilePhones.scrollPage(0,800);
-//        mobilePhones.selectAdType("For Sale"); // For sale, Wanted
-//        mobilePhones.selectCondition("New"); // New, Used (wanted doesnt have this)
-//        mobilePhones.setPriceRange(50000, 100000);
-        mobilePhones.selectBrandAndModel("Samsung", "Galaxy A15");
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+
+        // Apply the adType filter
+        mobilePhones.selectAdType("For Sale");
+
+        // Apply Condition filter if specified and adType is "For Sale"
+        if ("For Sale".equals(adType) && condition != null && !condition.isEmpty()) {
+            mobilePhones.selectCondition(condition);
+        }
+
+        // Apply price filter if specified and adType is "For Sale"
+        if ("For Sale".equals(adType) && (minPrice != null || maxPrice != null)) {
+            mobilePhones.setPriceRange(minPrice, maxPrice);
+        }
+
+        // Apply Brand and Model if specified
+        if (brandName != null && !brandName.isEmpty()) {
+            mobilePhones.selectBrandAndModel(brandName, modelName);
+        }
+
+        String currentURL = browserFactory.getDriver().getCurrentUrl();
+        System.out.println(currentURL);
+        if ("For Sale".equals(adType)) {
+            if (condition != null && !condition.isEmpty()) {
+                Assert.assertTrue(currentURL.contains("enum.condition=" + condition.toLowerCase()));
+            }
+            if (minPrice != null) {
+                Assert.assertTrue(currentURL.contains("money.price.minimum=" + minPrice.intValue()));
+            }
+            if (maxPrice != null) {
+                Assert.assertTrue(currentURL.contains("money.price.maximum=" + maxPrice.intValue()));
+            }
+            if (brandName != null && !brandName.isEmpty()) {
+                if (modelName != null && !modelName.isEmpty()) {
+                    // If both brand and model are provided
+                    Assert.assertTrue(currentURL.contains("tree.brand=" + brandName.toLowerCase() + "_" +  brandName.toLowerCase()+ "-" + modelName.toLowerCase().replace(" ", "-")));
+                } else {
+                    // If only brand is provided
+                    Assert.assertTrue(currentURL.contains("tree.brand=" + brandName.toLowerCase()));
+                }
+            }
         }
     }
 
     // test filters in mobile phone page
-    // test filters in accessories page
-
+    // test filters in phone accessories page
+    // test filters in comp accessories
 }
