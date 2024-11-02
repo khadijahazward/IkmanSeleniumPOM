@@ -1,17 +1,29 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.electroniccategories.ComputerAccessories;
-import pages.electroniccategories.ComputersTablets;
-import pages.electroniccategories.MobilePhoneAccessories;
 import pages.electroniccategories.MobilePhones;
+
+import java.time.Duration;
 
 public class ElectronicsPage extends BasePage{
     @FindBy(xpath = "//div[text() = 'Electronics']/ancestor::Button")
     public WebElement PageTitle;
+
+    @FindBy(xpath = "//div[text() = 'Condition']/ancestor::Button")
+    public WebElement conditionDropDown;
+
+    @FindBy(xpath = "//input[@id = 'condition-new']")
+    public WebElement conditionForNewPhone;
+
+    @FindBy(xpath = "//input[@id = 'condition-used']")
+    public WebElement conditionForUsedPhone;
 
     public ElectronicsPage(WebDriver driver) {
         super(driver);
@@ -22,10 +34,6 @@ public class ElectronicsPage extends BasePage{
     public BasePage navigateToCategory(String categoryText) {
         super.navigateToCategory(categoryText);
         switch (categoryText.toLowerCase()) {
-            case "mobile phone accessories":
-                return PageFactory.initElements(driver, MobilePhoneAccessories.class);
-            case "computers & tablets":
-                return PageFactory.initElements(driver, ComputersTablets.class);
             case "computer accessories":
                 return PageFactory.initElements(driver, ComputerAccessories.class);
             case "mobile phones":
@@ -35,4 +43,24 @@ public class ElectronicsPage extends BasePage{
         }
     }
 
+    public void selectCondition(String condition) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(conditionDropDown)).click();
+
+        wait.until(ExpectedConditions.visibilityOf(conditionForNewPhone));
+
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        WebElement targetElement;
+        switch (condition.toLowerCase()) {
+            case "used":
+                targetElement = conditionForUsedPhone;
+                break;
+            case "new":
+                targetElement = conditionForNewPhone;
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid condition type: " + condition);
+        }
+        jsExecutor.executeScript("arguments[0].click();", targetElement);
+    }
 }

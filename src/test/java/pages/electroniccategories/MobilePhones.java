@@ -12,35 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class MobilePhones extends ElectronicsPage {
-    @FindBy(xpath = "//div[text() = 'Type of ad']/ancestor::Button")
-    public WebElement adTypeDropdown;
-
-    @FindBy(xpath = "//input[@value='for_sale']")
-    public WebElement adTypeForSale;
-
-    @FindBy(xpath = "//input[@value='to_buy']")
-    public WebElement adTypeWanted;
-
-    @FindBy(xpath = "//div[text() = 'Condition']/ancestor::Button")
-    public WebElement conditionDropDown;
-
-    @FindBy(xpath = "//input[@id = 'condition-new']")
-    public WebElement conditionForNewPhone;
-
-    @FindBy(xpath = "//input[@id = 'condition-used']")
-    public WebElement conditionForUsedPhone;
-
-    @FindBy(xpath = "//div[text() = 'Price (Rs)']/ancestor::Button")
-    public WebElement priceDropDown;
-
-    @FindBy(xpath="//input[@aria-label='Max']")
-    public WebElement maxPrice;
-
-    @FindBy(xpath="//input[@aria-label='Min']")
-    public WebElement minPrice;
-
-    @FindBy(xpath = "(//button[text() = 'Apply'])[1]")
-    public WebElement applyRangeButtonForPrice;
 
     @FindBy(xpath = "//div[text() = 'Brand']/ancestor::button")
     public WebElement brandDropDown;
@@ -56,65 +27,6 @@ public class MobilePhones extends ElectronicsPage {
 
     public MobilePhones(WebDriver driver) {
         super(driver);
-    }
-
-    public void selectAdType(String adType) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(adTypeDropdown)).click();
-
-        wait.until(ExpectedConditions.visibilityOf(adTypeForSale));
-
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        WebElement targetElement;
-        switch (adType.toLowerCase()) {
-            case "for sale":
-                targetElement = adTypeForSale;
-                break;
-            case "wanted":
-                targetElement = adTypeWanted;
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid ad type: " + adType);
-        }
-        jsExecutor.executeScript("arguments[0].click();", targetElement);
-    }
-
-    public void selectCondition(String condition) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(conditionDropDown)).click();
-
-        wait.until(ExpectedConditions.visibilityOf(conditionForNewPhone));
-
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        WebElement targetElement;
-        switch (condition.toLowerCase()) {
-            case "used":
-                targetElement = conditionForUsedPhone;
-                break;
-            case "new":
-                targetElement = conditionForNewPhone;
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid condition type: " + condition);
-        }
-        jsExecutor.executeScript("arguments[0].click();", targetElement);
-    }
-
-    public void setPriceRange(Double min, Double max) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(priceDropDown)).click();
-        if (min != null){
-            wait.until(ExpectedConditions.visibilityOf(minPrice));
-            minPrice.clear();
-            minPrice.sendKeys(String.valueOf(min));
-        }
-
-        if (max != null) {
-            wait.until(ExpectedConditions.visibilityOf(maxPrice));
-            maxPrice.clear();
-            maxPrice.sendKeys(String.valueOf(max));
-        }
-        applyRangeButtonForPrice.click();
     }
 
     public void selectBrandAndModel(String brandName, String modelName) {
