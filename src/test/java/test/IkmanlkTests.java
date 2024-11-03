@@ -11,7 +11,8 @@ import pages.electroniccategories.ComputerAccessories;
 import pages.electroniccategories.MobilePhones;
 import pages.propertiescategories.HouseForSale;
 import pages.propertiescategories.LandForSale;
-import test.TestDataProvider;
+import pages.vehiclecategories.AutoPartsAndAccessories;
+import pages.vehiclecategories.MotorBikes;
 import utilities.Utility;
 
 import java.time.Duration;
@@ -36,10 +37,6 @@ public class IkmanlkTests extends Utility {
             PropertiesPage propertiesPage = (PropertiesPage) page;
             Assert.assertTrue(propertiesPage.PageTitle.isDisplayed(),
                     "Expected element is not displayed on the Properties page");
-        } else if (page instanceof ServicesPage){
-            ServicesPage servicesPage = (ServicesPage) page;
-            Assert.assertTrue(servicesPage.PageTitle.isDisplayed(),
-                    "Expected element is not displayed on the Services page");
         } else if (page instanceof ElectronicsPage){
             ElectronicsPage electronicsPage = (ElectronicsPage) page;
             Assert.assertTrue(electronicsPage.PageTitle.isDisplayed(),
@@ -105,7 +102,7 @@ public class IkmanlkTests extends Utility {
         mobilePhones.scrollPage(0,800);
 
         // Apply the adType filter
-        mobilePhones.selectAdType("For Sale");
+        mobilePhones.selectAdType(adType);
 
         // Apply Condition filter if specified and adType is "For Sale"
         if ("For Sale".equals(adType) && condition != null && !condition.isEmpty()) {
@@ -154,8 +151,9 @@ public class IkmanlkTests extends Utility {
         ElectronicsPage page = homePage.selectCategory("Electronics");
         ComputerAccessories computerAccessories = (ComputerAccessories) page.navigateToCategory("Computer Accessories");
 
+        computerAccessories.scrollPage(0,800);
         // Apply the adType filter
-        computerAccessories.selectAdType("For Sale");
+        computerAccessories.selectAdType(adType);
 
         // Apply Condition filter if specified and adType is "For Sale"
         if ("For Sale".equals(adType) && condition != null && !condition.isEmpty()) {
@@ -197,8 +195,7 @@ public class IkmanlkTests extends Utility {
                         + "enum.brand=".length()).toLowerCase();
                 for (String brand : brands) {
                     String formattedBrand = brand.trim().toLowerCase();
-                    Assert.assertTrue(urlBrands.contains(formattedBrand),
-                            "Expected brand '" + formattedBrand + "' not found in URL: " + currentURL);
+                    Assert.assertTrue(urlBrands.contains(formattedBrand));
                 }
             }
             if (itemTypeString != null && !itemTypeString.trim().isEmpty()) {
@@ -207,8 +204,7 @@ public class IkmanlkTests extends Utility {
                         + "enum.item_type=".length()).toLowerCase();
                 for (String item : itemTypes) {
                     String formattedItem = item.trim().toLowerCase();
-                    Assert.assertTrue(urlItems.contains(formattedItem),
-                            "Expected brand '" + formattedItem + "' not found in URL: " + currentURL);
+                    Assert.assertTrue(urlItems.contains(formattedItem));
                 }
             }
         }
@@ -222,8 +218,10 @@ public class IkmanlkTests extends Utility {
         PropertiesPage page = homePage.selectCategory("Property");
         LandForSale landForSale = (LandForSale) page.navigateToCategory("Land For Sale");
 
+        landForSale.scrollPage(0,800);
+
         // Apply the adType filter
-        landForSale.selectAdType("For Sale");
+        landForSale.selectAdType(adType);
 
         // Apply price filter if specified and adType is "For Sale"
         if ("For Sale".equals(adType) && (minPrice != null || maxPrice != null)) {
@@ -262,15 +260,17 @@ public class IkmanlkTests extends Utility {
         PropertiesPage page = homePage.selectCategory("Property");
         HouseForSale houseForSale = (HouseForSale) page.navigateToCategory("Houses For Sale");
 
+        houseForSale.scrollPage(0,800);
+
         // Applies the adType filter
-        houseForSale.selectAdType("For Sale");
+        houseForSale.selectAdType(adType);
 
         // Applies price filter if specified and adType is "For Sale"
         if ("For Sale".equals(adType) && (minPrice != null || maxPrice != null)) {
             houseForSale.setPriceRange(minPrice, maxPrice);
         }
 
-        // Applies price filter if specified and adType is "For Sale"
+        // Applies house size filter if specified and adType is "For Sale"
         if ("For Sale".equals(adType) && (minHouseSize != null || maxHouseSize != null)) {
             houseForSale.setHouseSizeRange(minHouseSize, maxHouseSize);
         }
@@ -320,4 +320,160 @@ public class IkmanlkTests extends Utility {
 
     }
 
+    @Test(dataProvider = "dataForAutoPartsPageFilters", dataProviderClass = TestDataProvider.class)
+    public void testFiltersInAutoPartsPage(String adType, String condition, Double minPrice, Double maxPrice, String partType,
+                                           String brandName, String modelName){
+        BasePage basePage = PageFactory.initElements(browserFactory.getDriver(), BasePage.class);
+        IkmanHomePage homePage = basePage.loadURL(URL);
+        VehiclePage page = homePage.selectCategory("Vehicles");
+        AutoPartsAndAccessories autoPartsAndAccessories = (AutoPartsAndAccessories) page.navigateToCategory("Auto Parts & Accessories");
+
+        autoPartsAndAccessories.scrollPage(0,800);
+
+        // Applies the adType filter
+        autoPartsAndAccessories.selectAdType(adType);
+
+        // Applies price filter if specified and adType is "For Sale"
+        if ("For Sale".equals(adType) && (minPrice != null || maxPrice != null)) {
+            autoPartsAndAccessories.setPriceRange(minPrice, maxPrice);
+        }
+
+        // Apply Condition filter if specified and adType is "For Sale"
+        if ("For Sale".equals(adType) && condition != null && !condition.isEmpty()) {
+            autoPartsAndAccessories.selectConditionForVehicle(condition);
+        }
+
+        // Selects part types if the parts list is not empty
+        if (partType != null && !partType.trim().isEmpty()) {
+            List<String> partTypes = Arrays.asList(partType.split(","));
+            autoPartsAndAccessories.selectTypesOfAccessories(partTypes);
+        }
+
+        // Apply Brand and Model if specified
+        if (brandName != null && !brandName.isEmpty()) {
+            autoPartsAndAccessories.selectBrandAndModel(brandName, modelName);
+        }
+
+        String currentURL = browserFactory.getDriver().getCurrentUrl();
+
+        if ("For Sale".equals(adType)) {
+            if (minPrice != null) {
+                Assert.assertTrue(currentURL.contains("money.price.minimum=" + minPrice.intValue()));
+            }
+            if (maxPrice != null) {
+                Assert.assertTrue(currentURL.contains("money.price.maximum=" + maxPrice.intValue()));
+            }
+            if (condition != null && !condition.isEmpty()) {
+                Assert.assertTrue(currentURL.contains("enum.condition=" + condition.toLowerCase()));
+            }
+            if (partType != null && !partType.trim().isEmpty()) {
+                String[] parts = partType.split(",");
+                String urlParts = currentURL.substring(currentURL.indexOf("enum.item_type=")
+                        + "enum.item_type=".length()).toLowerCase();
+                for (String part : parts) {
+                    String formattedPart = part.trim().toLowerCase().replace("&", "").replaceAll("\\s+", "_");
+                    Assert.assertTrue(urlParts.contains(formattedPart));
+                }
+            }
+            if (brandName != null && !brandName.isEmpty()) {
+                if (modelName != null && !modelName.isEmpty()) {
+                    // If both brand and model are provided
+                    Assert.assertTrue(currentURL.contains("tree.brand=" + brandName.toLowerCase() + "_" +  brandName.toLowerCase()+ "-" + modelName.toLowerCase().replace(" ", "")));
+                } else {
+                    // If only brand is provided
+                    Assert.assertTrue(currentURL.contains("tree.brand=" + brandName.toLowerCase()));
+                }
+            }
+        }
+    }
+    
+    @Test(dataProvider = "dataForMotorBikesPageFilters", dataProviderClass = TestDataProvider.class)
+    public void testFiltersInMotorBikesPage(String adType, String bikeType, String condition, Double minPrice, Double maxPrice,
+                                            String brandName, String modelName, Double minYearOfManufacture, Double maxYearOfManufacture,
+                                            Double minMileage, Double maxMileage){
+        BasePage basePage = PageFactory.initElements(browserFactory.getDriver(), BasePage.class);
+        IkmanHomePage homePage = basePage.loadURL(URL);
+        VehiclePage page = homePage.selectCategory("Vehicles");
+        MotorBikes motorBikes = (MotorBikes) page.navigateToCategory("Motorbikes");
+
+        motorBikes.scrollPage(0,800);
+
+        // Applies the adType filter
+        motorBikes.selectAdType(adType);
+
+        // Applies price filter if specified and adType is "For Sale"
+        if ("For Sale".equals(adType) && (minPrice != null || maxPrice != null)) {
+            motorBikes.setPriceRange(minPrice, maxPrice);
+        }
+
+        // Apply Condition filter if specified and adType is "For Sale"
+        if ("For Sale".equals(adType) && condition != null && !condition.isEmpty()) {
+            motorBikes.selectConditionForVehicle(condition);
+        }
+
+        // Selects bike types if the types of bike list is not empty
+        if (bikeType != null && !bikeType.trim().isEmpty()) {
+            List<String> bikeTypes = Arrays.asList(bikeType.split(","));
+            motorBikes.selectTypesOfBikes(bikeTypes);
+        }
+
+        // Applies year of manufacture filter if specified and adType is "For Sale"
+        if ("For Sale".equals(adType) && (minYearOfManufacture != null || maxYearOfManufacture != null)) {
+            motorBikes.setYearOfManufactureRange(minYearOfManufacture, maxYearOfManufacture);
+        }
+
+        // Applies mileage filter if specified and adType is "For Sale"
+        if ("For Sale".equals(adType) && (minMileage != null || maxMileage != null)) {
+            motorBikes.setMileageRange(minMileage, maxMileage);
+        }
+
+        // Apply Brand and Model if specified
+        if (brandName != null && !brandName.isEmpty()) {
+            motorBikes.selectBrandAndModel(brandName, modelName);
+        }
+
+        String currentURL = browserFactory.getDriver().getCurrentUrl();
+
+        if ("For Sale".equals(adType)) {
+            if (minPrice != null) {
+                Assert.assertTrue(currentURL.contains("money.price.minimum=" + minPrice.intValue()));
+            }
+            if (maxPrice != null) {
+                Assert.assertTrue(currentURL.contains("money.price.maximum=" + maxPrice.intValue()));
+            }
+            if (minYearOfManufacture != null) {
+                Assert.assertTrue(currentURL.contains("numeric.model_year.minimum=" + minYearOfManufacture.intValue()));
+            }
+            if (maxYearOfManufacture != null) {
+                Assert.assertTrue(currentURL.contains("numeric.model_year.maximum=" + maxYearOfManufacture.intValue()));
+            }
+            if (minMileage != null) {
+                Assert.assertTrue(currentURL.contains("numeric.mileage.minimum=" + minMileage.intValue()));
+            }
+            if (maxMileage != null) {
+                Assert.assertTrue(currentURL.contains("numeric.mileage.maximum=" + maxMileage.intValue()));
+            }
+            if (condition != null && !condition.isEmpty()) {
+                Assert.assertTrue(currentURL.contains("enum.condition=" + condition.toLowerCase()));
+            }
+            if (bikeType != null && !bikeType.trim().isEmpty()) {
+                String[] parts = bikeType.split(",");
+                String urlParts = currentURL.substring(currentURL.indexOf("enum.item_type=")
+                        + "enum.item_type=".length()).toLowerCase();
+                for (String part : parts) {
+                    String formattedPart = part.trim().toLowerCase().replace("-", "_");
+                    Assert.assertTrue(urlParts.contains(formattedPart));
+                }
+            }
+            if (brandName != null && !brandName.isEmpty()) {
+                if (modelName != null && !modelName.isEmpty()) {
+                    // If both brand and model are provided
+                    Assert.assertTrue(currentURL.contains("tree.brand=" + brandName.toLowerCase() + "_" +  brandName.toLowerCase()+ "-" + modelName.toLowerCase().replace(" ", "-")));
+                } else {
+                    // If only brand is provided
+                    Assert.assertTrue(currentURL.contains("tree.brand=" + brandName.toLowerCase()));
+                }
+            }
+        }
+    }
 }

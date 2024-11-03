@@ -48,6 +48,12 @@ public class TestDataProvider extends Utility {
         return processedData;
     }
 
+    @DataProvider
+    public static Object[][] dataForAutoPartsPageFilters() { return Utility.readTestDataFile(7);}
+
+    @DataProvider
+    public static Object[][] dataForMotorBikesPageFilters() { return Utility.readTestDataFile(8);}
+
     private static String convertToString(Object value) {
         if (value instanceof Double) {
             return String.valueOf(((Double) value).intValue());

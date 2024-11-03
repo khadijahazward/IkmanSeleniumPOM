@@ -68,8 +68,6 @@ public class IkmanHomePage extends BasePage {
                 return (T) PageFactory.initElements(driver, VehiclePage.class);
             case "home & garden":
                 return (T) PageFactory.initElements(driver, HomeAndGardenPage.class);
-            case "services":
-                return (T) PageFactory.initElements(driver, ServicesPage.class);
             default:
                 throw new IllegalArgumentException("Unknown category: " + category);
         }
