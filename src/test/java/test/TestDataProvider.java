@@ -54,6 +54,19 @@ public class TestDataProvider extends Utility {
     @DataProvider
     public static Object[][] dataForMotorBikesPageFilters() { return Utility.readTestDataFile(8);}
 
+    @DataProvider
+    public static Object[][] dataForFurniturePageFilters() { return Utility.readTestDataFile(9);}
+
+    @DataProvider
+    public static Object[][] dataForOtherHomeItemsPageFilters() {
+        Object[][] data = Utility.readTestDataFile(9);
+        Object[][] filteredData = new Object[data.length][4];
+        for (int i = 0; i < data.length; i++) {
+            System.arraycopy(data[i], 0, filteredData[i], 0, 4);
+        }
+        return filteredData;
+    }
+
     private static String convertToString(Object value) {
         if (value instanceof Double) {
             return String.valueOf(((Double) value).intValue());

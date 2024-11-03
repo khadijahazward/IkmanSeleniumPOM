@@ -4,11 +4,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pages.*;
 import pages.electroniccategories.ComputerAccessories;
 import pages.electroniccategories.MobilePhones;
+import pages.homeandgardencategories.Furniture;
+import pages.homeandgardencategories.OtherHomeItems;
 import pages.propertiescategories.HouseForSale;
 import pages.propertiescategories.LandForSale;
 import pages.vehiclecategories.AutoPartsAndAccessories;
@@ -16,9 +19,7 @@ import pages.vehiclecategories.MotorBikes;
 import utilities.Utility;
 
 import java.time.Duration;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class IkmanlkTests extends Utility {
     public final String URL = "https://ikman.lk/";
@@ -165,7 +166,7 @@ public class IkmanlkTests extends Utility {
             computerAccessories.setPriceRange(minPrice, maxPrice);
         }
 
-        // Selects brands if the items list is not empty
+        // Selects items if the items list is not empty
         if (itemTypeString != null && !itemTypeString.trim().isEmpty()) {
             List<String> itemTypes = Arrays.asList(itemTypeString.split(","));
             computerAccessories.selectItemTypes(itemTypes);
@@ -475,5 +476,126 @@ public class IkmanlkTests extends Utility {
                 }
             }
         }
+    }
+
+    @Test(dataProvider = "dataForFurniturePageFilters", dataProviderClass = TestDataProvider.class)
+    public void testFiltersInFurniturePage(String adType, String condition, Double minPrice, Double maxPrice,
+                                           String furnitureTypes, String brands){
+        BasePage basePage = PageFactory.initElements(browserFactory.getDriver(), BasePage.class);
+        IkmanHomePage homePage = basePage.loadURL(URL);
+        HomeAndGardenPage page = homePage.selectCategory("Home & Garden");
+        Furniture furniturePage = (Furniture) page.navigateToCategory("Furniture");
+
+        furniturePage.scrollPage(0,800);
+
+        // Applies the adType filter
+        furniturePage.selectAdType(adType);
+
+        // Applies price filter if specified and adType is "For Sale"
+        if ("For Sale".equals(adType) && (minPrice != null || maxPrice != null)) {
+            furniturePage.setPriceRange(minPrice, maxPrice);
+        }
+
+        // Apply Condition filter if specified and adType is "For Sale"
+        if ("For Sale".equals(adType) && condition != null && !condition.isEmpty()) {
+            furniturePage.selectConditionForItem(condition);
+        }
+
+        // Selects furniture types if the list is not empty
+        if (furnitureTypes != null && !furnitureTypes.trim().isEmpty()) {
+            List<String> furniture = Arrays.asList(furnitureTypes.split(","));
+            furniturePage.selectTypesOfFurniture(furniture);
+        }
+
+        // Selects brands if the brand name list is not empty
+        if (brands != null && !brands.trim().isEmpty()) {
+            List<String> brandNames = Arrays.asList(brands.split(","));
+            furniturePage.selectBrands(brandNames);
+        }
+
+        String currentURL = browserFactory.getDriver().getCurrentUrl();
+
+        if ("For Sale".equals(adType)) {
+            if (minPrice != null) {
+                Assert.assertTrue(currentURL.contains("money.price.minimum=" + minPrice.intValue()));
+            }
+            if (maxPrice != null) {
+                Assert.assertTrue(currentURL.contains("money.price.maximum=" + maxPrice.intValue()));
+            }
+            if (condition != null && !condition.isEmpty()) {
+                Assert.assertTrue(currentURL.contains("enum.condition=" + condition.toLowerCase()));
+            }
+            Map<String, String> furnitureTypeMapping = getFurnitureTypeMapping();
+            if (furnitureTypes != null && !furnitureTypes.trim().isEmpty()) {
+                String[] typesOfFurniture = furnitureTypes.split(",");
+                String urlFurniture = currentURL.substring(currentURL.indexOf("enum.item_type=")
+                        + "enum.item_type=".length()).toLowerCase();
+                for (String furniture : typesOfFurniture) {
+                    String mappedFurnitureType = furnitureTypeMapping.get(furniture.trim());
+                    Assert.assertTrue(urlFurniture.contains(mappedFurnitureType));
+                }
+            }
+            if (brands != null && !brands.trim().isEmpty()) {
+                String[] brandTypes = brands.split(",");
+                String urlBrands = currentURL.substring(currentURL.indexOf("enum.brand=")
+                        + "enum.brand=".length()).toLowerCase();
+                for (String brand : brandTypes) {
+                    String formattedBrand = brand.trim().toLowerCase().replace("&", "").replaceAll("\\s+", "_");
+                    Assert.assertTrue(urlBrands.contains(formattedBrand));
+                }
+            }
+        }
+    }
+
+    @Test(dataProvider = "dataForOtherHomeItemsPageFilters", dataProviderClass = TestDataProvider.class)
+    public void testFiltersInOtherHomeItemsPage(String adType, String condition, Double minPrice, Double maxPrice){
+        BasePage basePage = PageFactory.initElements(browserFactory.getDriver(), BasePage.class);
+        IkmanHomePage homePage = basePage.loadURL(URL);
+        HomeAndGardenPage page = homePage.selectCategory("Home & Garden");
+        OtherHomeItems otherHomeItemsPage = (OtherHomeItems) page.navigateToCategory("Other Home Items");
+
+        otherHomeItemsPage.scrollPage(0,800);
+
+        // Applies the adType filter
+        otherHomeItemsPage.selectAdType(adType);
+
+        // Applies price filter if specified and adType is "For Sale"
+        if ("For Sale".equals(adType) && (minPrice != null || maxPrice != null)) {
+            otherHomeItemsPage.setPriceRange(minPrice, maxPrice);
+        }
+
+        // Apply Condition filter if specified and adType is "For Sale"
+        if ("For Sale".equals(adType) && condition != null && !condition.isEmpty()) {
+            otherHomeItemsPage.selectConditionForItem(condition);
+        }
+
+        String currentURL = browserFactory.getDriver().getCurrentUrl();
+        if ("For Sale".equals(adType)) {
+            if (minPrice != null) {
+                Assert.assertTrue(currentURL.contains("money.price.minimum=" + minPrice.intValue()));
+            }
+            if (maxPrice != null) {
+                Assert.assertTrue(currentURL.contains("money.price.maximum=" + maxPrice.intValue()));
+            }
+            if (condition != null && !condition.isEmpty()) {
+                Assert.assertTrue(currentURL.contains("enum.condition=" + condition.toLowerCase()));
+            }
+        }
+    }
+
+    // Maps between data provider values and URL-compatible values for furniture types.
+    private static Map<String, String> getFurnitureTypeMapping() {
+        Map<String, String> furnitureTypeMapping = new HashMap<>();
+        furnitureTypeMapping.put("Bedroom Furniture", "bedroom");
+        furnitureTypeMapping.put("Tables & Chairs", "table_chair");
+        furnitureTypeMapping.put("Living Room Furniture", "living_room");
+        furnitureTypeMapping.put("Shelves & Pantry Cupboards", "storage");
+        furnitureTypeMapping.put("TV / stereo", "tv_stereo");
+        furnitureTypeMapping.put("Other", "other");
+        furnitureTypeMapping.put("Antique Furnitures", "art");
+        furnitureTypeMapping.put("Lighting", "lightning");
+        furnitureTypeMapping.put("Outdoor & Garden", "outdoor_n_garden");
+        furnitureTypeMapping.put("Textiles / decoration", "decoration");
+        return furnitureTypeMapping;
     }
 }

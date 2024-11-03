@@ -42,6 +42,5 @@ public class AutoPartsAndAccessories extends VehiclePage {
                 throw new RuntimeException(e);
             }
         }
-
     }
 }

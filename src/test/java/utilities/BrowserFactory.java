@@ -14,7 +14,7 @@ public class BrowserFactory {
         switch(browserType){
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
-//                chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("--headless");
                 driver = WebDriverManager.chromedriver().capabilities(chromeOptions).create();
                 break;
             case "firefox":
