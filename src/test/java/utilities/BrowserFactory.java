@@ -18,7 +18,6 @@ public class BrowserFactory {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
                 chromeOptions.addArguments("--disable-gpu");
-                chromeOptions.addArguments("--window-size=1920,1080");
                 driver = WebDriverManager.chromedriver().capabilities(chromeOptions).create();
                 break;
             case "firefox":

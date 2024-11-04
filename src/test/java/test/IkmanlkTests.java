@@ -65,8 +65,6 @@ public class IkmanlkTests extends Utility {
         } catch (Exception e) {
             Reporter.log("Test failed due to an exception: " + e.getMessage(), true);
             Assert.fail("Test encountered an error: " + e.getMessage());
-        } finally {
-            Reporter.log("Test for location: " + location + ", subLocation: " + subLocation + ", category: " + category + " completed.", true);
         }
     }
 
@@ -100,9 +98,6 @@ public class IkmanlkTests extends Utility {
         } catch (Exception e) {
             Reporter.log("Test failed due to an exception: " + e.getMessage(), true);
             Assert.fail("Test encountered an error: " + e.getMessage());
-
-        } finally {
-            Reporter.log("Test case completed for search query: " + searchQuery, true);
         }
     }
 
@@ -126,8 +121,6 @@ public class IkmanlkTests extends Utility {
         } catch (Exception e) {
             Reporter.log("Test failed due to an exception: " + e.getMessage(), true);
             Assert.fail("Test encountered an error: " + e.getMessage());
-        } finally {
-            Reporter.log("Test case completed for sorting option: " + expectedOptionText, true);
         }
     }
 
@@ -203,9 +196,6 @@ public class IkmanlkTests extends Utility {
         } catch (Exception e) {
             Reporter.log("Test failed due to an exception: " + e.getMessage(), true);
             Assert.fail("Test encountered an error: " + e.getMessage());
-
-        } finally {
-            Reporter.log("Test case completed for mobile phones filters.", true);
         }
 
     }
@@ -300,8 +290,6 @@ public class IkmanlkTests extends Utility {
         } catch (Exception e) {
             Reporter.log("An unexpected error occurred: " + e.getMessage(), true);
             Assert.fail("Test failed due to an unexpected error: " + e.getMessage());
-        } finally {
-            Reporter.log("Test case completed for computer accessories filters.", true);
         }
     }
 
@@ -365,8 +353,6 @@ public class IkmanlkTests extends Utility {
         } catch (Exception e) {
             Reporter.log("An unexpected error occurred: " + e.getMessage(), true);
             Assert.fail("Test failed due to an unexpected error: " + e.getMessage());
-        } finally {
-            Reporter.log("Test case completed for computer accessories filters.", true);
         }
     }
 
@@ -457,8 +443,6 @@ public class IkmanlkTests extends Utility {
         } catch (Exception e) {
             Reporter.log("An unexpected error occurred: " + e.getMessage(), true);
             Assert.fail("Test failed due to an unexpected error: " + e.getMessage());
-        } finally {
-            Reporter.log("Test case completed for computer accessories filters.", true);
         }
     }
 
@@ -551,8 +535,6 @@ public class IkmanlkTests extends Utility {
         } catch (Exception e) {
             Reporter.log("An unexpected error occurred: " + e.getMessage(), true);
             Assert.fail("Test failed due to an unexpected error: " + e.getMessage());
-        } finally {
-            Reporter.log("Test case completed for computer accessories filters.", true);
         }
     }
 
@@ -675,8 +657,6 @@ public class IkmanlkTests extends Utility {
         } catch (Exception e) {
             Reporter.log("An unexpected error occurred: " + e.getMessage(), true);
             Assert.fail("Test failed due to an unexpected error: " + e.getMessage());
-        } finally {
-            Reporter.log("Test case completed for computer accessories filters.", true);
         }
     }
 
@@ -768,8 +748,6 @@ public class IkmanlkTests extends Utility {
         } catch (Exception e) {
             Reporter.log("An unexpected error occurred: " + e.getMessage(), true);
             Assert.fail("Test failed due to an unexpected error: " + e.getMessage());
-        } finally {
-            Reporter.log("Test case completed for computer accessories filters.", true);
         }
     }
 
@@ -824,8 +802,6 @@ public class IkmanlkTests extends Utility {
         } catch (Exception e) {
             Reporter.log("An unexpected error occurred: " + e.getMessage(), true);
             Assert.fail("Test failed due to an unexpected error: " + e.getMessage());
-        } finally {
-            Reporter.log("Test case completed for computer accessories filters.", true);
         }
     }
 

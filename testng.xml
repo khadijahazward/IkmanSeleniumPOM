@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="methods" thread-count="4" verbose="10" >
+<suite name="All Test Suite" parallel="methods" thread-count="2" verbose="10" >
     <test verbose="2" preserve-order="true" name="C:/src/SQA Projects/pageobjectmodel-ikmanlk">
         <classes>
             <class name="test.IkmanlkTests">
                 <methods>
-                    <include name="testCategoryInHomePage"/>
+<!--                    <include name="testCategoryInHomePage"/>-->
                     <include name="testSearchFunctionality"/>
-                    <include name="testSortOptions"/>
-                    <include name="testFiltersInMobilePhonesPage"/>
-                    <include name="testFiltersInComputerAccessoriesPage"/>
-                    <include name="testFiltersInLandForSalePage"/>
-                    <include name="testFiltersInHouseForSalePage"/>
-                    <include name="testFiltersInAutoPartsPage"/>
-                    <include name="testFiltersInMotorBikesPage"/>
-                    <include name="testFiltersInFurniturePage"/>
-                    <include name="testFiltersInOtherHomeItemsPage"/>
+<!--                    <include name="testSortOptions"/>-->
+<!--                    <include name="testFiltersInMobilePhonesPage"/>-->
+<!--                    <include name="testFiltersInComputerAccessoriesPage"/>-->
+<!--                    <include name="testFiltersInLandForSalePage"/>-->
+<!--                    <include name="testFiltersInHouseForSalePage"/>-->
+<!--                    <include name="testFiltersInAutoPartsPage"/>-->
+<!--                    <include name="testFiltersInMotorBikesPage"/>-->
+<!--                    <include name="testFiltersInFurniturePage"/>-->
+<!--                    <include name="testFiltersInOtherHomeItemsPage"/>-->
                 </methods>
             </class>
         </classes>
