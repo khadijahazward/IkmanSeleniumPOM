@@ -45,6 +45,7 @@ public class HouseForSale extends PropertiesPage {
     @FindBy(xpath = "//div[text() = 'Bathrooms']/ancestor::Button")
     public WebElement bathroomsDropDown;
 
+    // sets the range of house size by entering minimum and maximum values
     public void setHouseSizeRange(Double min, Double max) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(houseSizeDropDown)).click();
@@ -62,6 +63,7 @@ public class HouseForSale extends PropertiesPage {
         applyRangeButtonForHouseSize.click();
     }
 
+    // selects the number of bedrooms from the dropdown
     public void selectNumberOfBedrooms(List<String> bedroomCount) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         // Opens the dropdown and clicks the show more button
@@ -78,6 +80,7 @@ public class HouseForSale extends PropertiesPage {
         }
     }
 
+    // selects the number of bathrooms from the dropdown
     public void selectNumberofBathrooms(List<String> bathroomCount) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         // Opens the dropdown and clicks the show more button

@@ -11,10 +11,14 @@ public class BrowserFactory {
     ThreadLocal<WebDriver> threadLocal = ThreadLocal.withInitial(()->{
         WebDriver driver = null;
         String browserType = System.getProperty("browser", "chrome");
+
+        // Initializes WebDriver based on the browser type specified
         switch(browserType){
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("--disable-gpu");
+                chromeOptions.addArguments("--window-size=1920,1080");
                 driver = WebDriverManager.chromedriver().capabilities(chromeOptions).create();
                 break;
             case "firefox":
@@ -43,6 +47,7 @@ public class BrowserFactory {
         return browserFactory;
     }
 
+    // Returns the WebDriver instance specific to the current thread
     public WebDriver getDriver(){
         return threadLocal.get();
     }

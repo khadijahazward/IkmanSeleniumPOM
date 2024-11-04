@@ -29,6 +29,7 @@ public class Utility {
         browserFactory.getDriver().quit();
     }
 
+    // Reads the data from the Excel sheet.
     public static Object[][] readTestDataFile (int sheetNumber) {
         Object[][] content = null;
         try {

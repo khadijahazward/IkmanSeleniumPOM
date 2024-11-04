@@ -28,6 +28,7 @@ public class MobilePhones extends ElectronicsPage {
         super(driver);
     }
 
+    // Selects the brand and model
     public void selectBrandAndModel(String brandName, String modelName) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(brandDropDown)).click();

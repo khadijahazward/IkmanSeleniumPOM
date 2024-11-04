@@ -40,6 +40,7 @@ public class MotorBikes extends VehiclePage {
     @FindBy(xpath = "(//button[text() = 'Apply'])[4]")
     public WebElement applyRangeButtonForMileage;
 
+    // selects types of bikes from the dropdown
     public void selectTypesOfBikes(List<String> bikeTypes) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         // Opens the dropdown
@@ -61,6 +62,7 @@ public class MotorBikes extends VehiclePage {
         super(driver);
     }
 
+    // sets the year of manufacture range
     public void setYearOfManufactureRange(Double min, Double max) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(manufactureYearDropDown)).click();
@@ -78,6 +80,7 @@ public class MotorBikes extends VehiclePage {
         applyRangeButtonForYearOfManufacture.click();
     }
 
+    // sets the mileage range
     public void setMileageRange(Double min, Double max) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(mileageDropDown)).click();

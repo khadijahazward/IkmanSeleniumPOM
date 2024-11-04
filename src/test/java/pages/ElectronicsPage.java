@@ -29,7 +29,7 @@ public class ElectronicsPage extends BasePage{
         super(driver);
     }
 
-    // Returns the page object based on the category selected
+    // Navigates to the specified category on the Electronics page.
     @Override
     public BasePage navigateToCategory(String categoryText) {
         super.navigateToCategory(categoryText);
@@ -43,6 +43,7 @@ public class ElectronicsPage extends BasePage{
         }
     }
 
+    // Selects the condition for an item on the Electronics page
     public void selectCondition(String condition) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(conditionDropDown)).click();

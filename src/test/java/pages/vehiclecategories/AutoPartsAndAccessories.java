@@ -25,6 +25,7 @@ public class AutoPartsAndAccessories extends VehiclePage {
         super(driver);
     }
 
+    // selects types of accessories from the dropdown
     public void selectTypesOfAccessories(List<String> accessoryTypes) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         // Opens the dropdown and clicks the show more button

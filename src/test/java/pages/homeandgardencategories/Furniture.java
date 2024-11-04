@@ -30,6 +30,7 @@ public class Furniture extends HomeAndGardenPage {
         super(driver);
     }
 
+    // selects furniture from the dropdown
     public void selectTypesOfFurniture(List<String> furnitureTypes) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         // Opens the dropdown and clicks the show more button
@@ -49,6 +50,7 @@ public class Furniture extends HomeAndGardenPage {
         }
     }
 
+    // selects brands from the dropdown
     public void selectBrands(List<String> brands) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         // Opens the dropdown and clicks the show more button

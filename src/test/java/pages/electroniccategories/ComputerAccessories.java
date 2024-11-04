@@ -30,6 +30,7 @@ public class ComputerAccessories extends ElectronicsPage {
         super(driver);
     }
 
+    // selects item types from the dropdown
     public void selectItemTypes(List<String> itemTypes) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(itemTypeDropDown)).click();
@@ -47,6 +48,7 @@ public class ComputerAccessories extends ElectronicsPage {
         }
     }
 
+    // Selects brands from the dropdown
     public void selectBrands(List<String> brands) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(brandDropDown)).click();

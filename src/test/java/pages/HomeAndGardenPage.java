@@ -31,6 +31,7 @@ public class HomeAndGardenPage extends BasePage{
         super(driver);
     }
 
+    // Selects the condition for an item in the Home & Garden page
     public void selectConditionForItem(String condition) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(conditionDropDown)).click();

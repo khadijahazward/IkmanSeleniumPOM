@@ -45,6 +45,7 @@ public class VehiclePage extends BasePage{
         super(driver);
     }
 
+    // Selects the condition for the vehicle
     public void selectConditionForVehicle(String condition) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(conditionDropDown)).click();
@@ -69,6 +70,7 @@ public class VehiclePage extends BasePage{
         jsExecutor.executeScript("arguments[0].click();", targetElement);
     }
 
+    // Selects the brand and model for the vehicle.
     public void selectBrandAndModel(String brandName, String modelName) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(brandDropDown)).click();

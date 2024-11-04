@@ -26,6 +26,7 @@ public class LandForSale extends PropertiesPage {
         super(driver);
     }
 
+    // selects the land size range from the dropdown
     public void setLandSizeRange(Double min, Double max) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(landSizeDropDown)).click();

@@ -46,15 +46,18 @@ public class BasePage {
         this.driver = driver;
     }
 
+    // Loads the specified URL and returns the Ikman.lk HomePage object
     public IkmanHomePage loadURL(String url) {
         driver.get(url);
         return PageFactory.initElements(driver, IkmanHomePage.class);
     }
 
+    // Scrolls the page by specified x and y values
     public void scrollPage(int x, int y) {
         new Actions(driver).scrollByAmount(x,y).perform();
     }
 
+    // Selects the sorting option based on provided option ID
     public void selectSortOption(String optionId) {
         sortResultsByButton.click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -63,13 +66,14 @@ public class BasePage {
         optionToSelect.click();
     }
 
-    // Clicks on a category link.
+    // Clicks on the link of a specified category
     public BasePage navigateToCategory(String categoryText) {
         WebElement categoryLink = driver.findElement(By.xpath("//span[text()='" + categoryText + "']/ancestor::a"));
         categoryLink.click();
         return this;
     }
 
+    // Sets the price range by entering minimum and maximum values
     public void setPriceRange(Double min, Double max) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(priceDropDown)).click();
@@ -87,6 +91,7 @@ public class BasePage {
         applyRangeButtonForPrice.click();
     }
 
+    // Selects the ad type based on the provided option
     public void selectAdType(String adType) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(adTypeDropdown)).click();
