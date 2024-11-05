@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -57,7 +58,7 @@ public class IkmanHomePage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement categoryButton = wait.until(ExpectedConditions.elementToBeClickable
                 (By.xpath("//p[text()='" + category + "']/ancestor::a")));
-        categoryButton.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", categoryButton);
 
         switch (category.toLowerCase()) {
             case "electronics":

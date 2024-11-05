@@ -63,7 +63,7 @@ public class BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(sortResultsByListBox));
         WebElement optionToSelect = driver.findElement(By.xpath("//li[@id='" + optionId + "']"));
-        optionToSelect.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", optionToSelect);
     }
 
     // Clicks on the link of a specified category
