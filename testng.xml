@@ -5,17 +5,17 @@
         <classes>
             <class name="test.IkmanlkTests">
                 <methods>
-<!--                    <include name="testCategoryInHomePage"/>-->
+                    <include name="testCategoryInHomePage"/>
                     <include name="testSearchFunctionality"/>
-<!--                    <include name="testSortOptions"/>-->
-<!--                    <include name="testFiltersInMobilePhonesPage"/>-->
-<!--                    <include name="testFiltersInComputerAccessoriesPage"/>-->
-<!--                    <include name="testFiltersInLandForSalePage"/>-->
-<!--                    <include name="testFiltersInHouseForSalePage"/>-->
-<!--                    <include name="testFiltersInAutoPartsPage"/>-->
-<!--                    <include name="testFiltersInMotorBikesPage"/>-->
-<!--                    <include name="testFiltersInFurniturePage"/>-->
-<!--                    <include name="testFiltersInOtherHomeItemsPage"/>-->
+                    <include name="testSortOptions"/>
+                    <include name="testFiltersInMobilePhonesPage"/>
+                    <include name="testFiltersInComputerAccessoriesPage"/>
+                    <include name="testFiltersInLandForSalePage"/>
+                    <include name="testFiltersInHouseForSalePage"/>
+                    <include name="testFiltersInAutoPartsPage"/>
+                    <include name="testFiltersInMotorBikesPage"/>
+                    <include name="testFiltersInFurniturePage"/>
+                    <include name="testFiltersInOtherHomeItemsPage"/>
                 </methods>
             </class>
         </classes>
