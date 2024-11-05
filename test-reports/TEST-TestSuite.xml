@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="1084.502" tests="87" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="19"/>
+    <property name="webdriver.chrome.driver" value="/home/runner/.cache/selenium/chromedriver/linux64/130.0.6723.91/chromedriver"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/runner/work/IkmanSeleniumPOM/IkmanSeleniumPOM/target/test-classes:/home/runner/work/IkmanSeleniumPOM/IkmanSeleniumPOM/target/classes:/home/runner/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/home/runner/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/runner/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/home/runner/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-java/4.22.0/selenium-java-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-api/4.22.0/selenium-api-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.22.0/selenium-chrome-driver-4.22.0.jar:/home/runner/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.22.0/selenium-chromium-driver-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-json/4.22.0/selenium-json-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.22.0/selenium-manager-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v124/4.22.0/selenium-devtools-v124-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v125/4.22.0/selenium-devtools-v125-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v126/4.22.0/selenium-devtools-v126-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v85/4.22.0/selenium-devtools-v85-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.22.0/selenium-edge-driver-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.22.0/selenium-firefox-driver-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-http/4.22.0/selenium-http-4.22.0.jar:/home/runner/.m2/repository/dev/failsafe/failsafe/3.3.2/failsafe-3.3.2.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.22.0/selenium-ie-driver-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.22.0/selenium-remote-driver-4.22.0.jar:/home/runner/.m2/repository/com/google/guava/guava/33.2.1-jre/guava-33.2.1-jre.jar:/home/runner/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/runner/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/home/runner/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/runner/.m2/repository/io/opentelemetry/semconv/opentelemetry-semconv/1.25.0-alpha/opentelemetry-semconv-1.25.0-alpha.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-api/1.39.0/opentelemetry-api-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-context/1.39.0/opentelemetry-context-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.39.0/opentelemetry-exporter-logging-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.39.0/opentelemetry-sdk-common-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.39.0/opentelemetry-sdk-extension-autoconfigure-spi-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.39.0/opentelemetry-sdk-extension-autoconfigure-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-api-incubator/1.39.0-alpha/opentelemetry-api-incubator-1.39.0-alpha.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.39.0/opentelemetry-sdk-trace-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.39.0/opentelemetry-sdk-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.39.0/opentelemetry-sdk-metrics-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.39.0/opentelemetry-sdk-logs-1.39.0.jar:/home/runner/.m2/repository/net/bytebuddy/byte-buddy/1.14.17/byte-buddy-1.14.17.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-os/4.22.0/selenium-os-4.22.0.jar:/home/runner/.m2/repository/org/apache/commons/commons-exec/1.4.0/commons-exec-1.4.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.22.0/selenium-safari-driver-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-support/4.22.0/selenium-support-4.22.0.jar:/home/runner/.m2/repository/io/github/bonigarcia/webdrivermanager/5.9.1/webdrivermanager-5.9.1.jar:/home/runner/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/runner/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java/3.3.6/docker-java-3.3.6.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-core/3.3.6/docker-java-core-3.3.6.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.3/jackson-databind-2.10.3.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.3/jackson-core-2.10.3.jar:/home/runner/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.3.6/docker-java-transport-httpclient5-3.3.6.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6.jar:/home/runner/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/runner/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/home/runner/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/home/runner/.m2/repository/org/apache/commons/commons-compress/1.26.2/commons-compress-1.26.2.jar:/home/runner/.m2/repository/commons-codec/commons-codec/1.17.0/commons-codec-1.17.0.jar:/home/runner/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2/httpcore5-5.2.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2/httpcore5-h2-5.2.jar:/home/runner/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/runner/.m2/repository/org/apache/poi/poi-ooxml/5.2.5/poi-ooxml-5.2.5.jar:/home/runner/.m2/repository/org/apache/poi/poi/5.2.5/poi-5.2.5.jar:/home/runner/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/home/runner/.m2/repository/com/zaxxer/SparseBitSet/1.3/SparseBitSet-1.3.jar:/home/runner/.m2/repository/org/apache/poi/poi-ooxml-lite/5.2.5/poi-ooxml-lite-5.2.5.jar:/home/runner/.m2/repository/org/apache/xmlbeans/xmlbeans/5.2.0/xmlbeans-5.2.0.jar:/home/runner/.m2/repository/commons-io/commons-io/2.15.0/commons-io-2.15.0.jar:/home/runner/.m2/repository/com/github/virtuald/curvesapi/1.08/curvesapi-1.08.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/home/runner/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:"/>
+    <property name="java.vm.vendor" value="Azul Systems, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://www.azul.com/"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="19"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/opt/hostedtoolcache/Java_Zulu_jdk/19.0.2-7/x64/lib"/>
+    <property name="sun.java.command" value="/home/runner/work/IkmanSeleniumPOM/IkmanSeleniumPOM/target/surefire/surefirebooter-20241105074712485_3.jar /home/runner/work/IkmanSeleniumPOM/IkmanSeleniumPOM/target/surefire 2024-11-05T07-47-12_376-jvmRun1 surefire-20241105074712485_1tmp surefire_0-20241105074712485_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/runner/work/IkmanSeleniumPOM/IkmanSeleniumPOM/target/test-classes:/home/runner/work/IkmanSeleniumPOM/IkmanSeleniumPOM/target/classes:/home/runner/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/home/runner/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/runner/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/home/runner/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-java/4.22.0/selenium-java-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-api/4.22.0/selenium-api-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.22.0/selenium-chrome-driver-4.22.0.jar:/home/runner/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.22.0/selenium-chromium-driver-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-json/4.22.0/selenium-json-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.22.0/selenium-manager-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v124/4.22.0/selenium-devtools-v124-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v125/4.22.0/selenium-devtools-v125-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v126/4.22.0/selenium-devtools-v126-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v85/4.22.0/selenium-devtools-v85-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.22.0/selenium-edge-driver-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.22.0/selenium-firefox-driver-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-http/4.22.0/selenium-http-4.22.0.jar:/home/runner/.m2/repository/dev/failsafe/failsafe/3.3.2/failsafe-3.3.2.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.22.0/selenium-ie-driver-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.22.0/selenium-remote-driver-4.22.0.jar:/home/runner/.m2/repository/com/google/guava/guava/33.2.1-jre/guava-33.2.1-jre.jar:/home/runner/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/runner/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/home/runner/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/runner/.m2/repository/io/opentelemetry/semconv/opentelemetry-semconv/1.25.0-alpha/opentelemetry-semconv-1.25.0-alpha.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-api/1.39.0/opentelemetry-api-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-context/1.39.0/opentelemetry-context-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.39.0/opentelemetry-exporter-logging-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.39.0/opentelemetry-sdk-common-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.39.0/opentelemetry-sdk-extension-autoconfigure-spi-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.39.0/opentelemetry-sdk-extension-autoconfigure-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-api-incubator/1.39.0-alpha/opentelemetry-api-incubator-1.39.0-alpha.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.39.0/opentelemetry-sdk-trace-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.39.0/opentelemetry-sdk-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.39.0/opentelemetry-sdk-metrics-1.39.0.jar:/home/runner/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.39.0/opentelemetry-sdk-logs-1.39.0.jar:/home/runner/.m2/repository/net/bytebuddy/byte-buddy/1.14.17/byte-buddy-1.14.17.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-os/4.22.0/selenium-os-4.22.0.jar:/home/runner/.m2/repository/org/apache/commons/commons-exec/1.4.0/commons-exec-1.4.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.22.0/selenium-safari-driver-4.22.0.jar:/home/runner/.m2/repository/org/seleniumhq/selenium/selenium-support/4.22.0/selenium-support-4.22.0.jar:/home/runner/.m2/repository/io/github/bonigarcia/webdrivermanager/5.9.1/webdrivermanager-5.9.1.jar:/home/runner/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/runner/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java/3.3.6/docker-java-3.3.6.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-core/3.3.6/docker-java-core-3.3.6.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.3/jackson-databind-2.10.3.jar:/home/runner/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.3/jackson-core-2.10.3.jar:/home/runner/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.3.6/docker-java-transport-httpclient5-3.3.6.jar:/home/runner/.m2/repository/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6.jar:/home/runner/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/runner/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/home/runner/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/home/runner/.m2/repository/org/apache/commons/commons-compress/1.26.2/commons-compress-1.26.2.jar:/home/runner/.m2/repository/commons-codec/commons-codec/1.17.0/commons-codec-1.17.0.jar:/home/runner/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2/httpcore5-5.2.jar:/home/runner/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2/httpcore5-h2-5.2.jar:/home/runner/.m2/repository/org/slf4j/slf4j-simple/1.7.32/slf4j-simple-1.7.32.jar:/home/runner/.m2/repository/org/apache/poi/poi-ooxml/5.2.5/poi-ooxml-5.2.5.jar:/home/runner/.m2/repository/org/apache/poi/poi/5.2.5/poi-5.2.5.jar:/home/runner/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/home/runner/.m2/repository/com/zaxxer/SparseBitSet/1.3/SparseBitSet-1.3.jar:/home/runner/.m2/repository/org/apache/poi/poi-ooxml-lite/5.2.5/poi-ooxml-lite-5.2.5.jar:/home/runner/.m2/repository/org/apache/xmlbeans/xmlbeans/5.2.0/xmlbeans-5.2.0.jar:/home/runner/.m2/repository/commons-io/commons-io/2.15.0/commons-io-2.15.0.jar:/home/runner/.m2/repository/com/github/virtuald/curvesapi/1.08/curvesapi-1.08.jar:/home/runner/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/home/runner/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/runner"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-01-17"/>
+    <property name="java.home" value="/opt/hostedtoolcache/Java_Zulu_jdk/19.0.2-7/x64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/runner/work/IkmanSeleniumPOM/IkmanSeleniumPOM"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/runner/work/IkmanSeleniumPOM/IkmanSeleniumPOM/target/surefire/surefirebooter-20241105074712485_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="19.0.2+7"/>
+    <property name="user.name" value="runner"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-1025-azure"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Zulu19.32+13-CA"/>
+    <property name="localRepository" value="/home/runner/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://www.azul.com/support/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="19.0.2"/>
+    <property name="user.dir" value="/home/runner/work/IkmanSeleniumPOM/IkmanSeleniumPOM"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Azul Systems, Inc."/>
+    <property name="java.vm.version" value="19.0.2+7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="63.0"/>
+  </properties>
+  <testcase name="testSearchFunctionality[laptop](1)" classname="test.IkmanlkTests" time="19.828">
+    <system-out><![CDATA[...
+... TestNG 7.10.2 by Cédric Beust (cedric@beust.com)
+...
+
+Navigated to Ikman.lk home page.
+Navigated to Ikman.lk home page.
+Selected district: Colombo
+Selected area: Maharagama
+Entered search query: laptop
+Search result heading contains the search query.
+Search results displayed for query: laptop in sri lanka
+]]></system-out>
+    <system-err><![CDATA[[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 2 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 8 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 1 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 6 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 7 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 13 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[main] INFO org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 130.0.6723.91 (resolved driver for Chrome 130)
+[main] INFO io.github.bonigarcia.wdm.online.Downloader - Downloading https://storage.googleapis.com/chrome-for-testing-public/130.0.6723.91/linux64/chromedriver-linux64.zip
+[main] INFO io.github.bonigarcia.wdm.online.Downloader - Extracting driver from compressed file chromedriver-linux64.zip
+[main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/runner/.cache/selenium/chromedriver/linux64/130.0.6723.91/chromedriver
+Nov 05, 2024 7:47:16 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 130, returning the closest version; found: 126; Please update to a Selenium version that supports CDP version 130
+[main] INFO org.testng.internal.Utils - [Utils] DynamicGraphHelper.createDynamicGraph() took 2 ms.
+[main] INFO org.testng.internal.Utils - [TestTaskExecutor] Starting executor test 2147483647 with time out: 2147483647 milliseconds.
+ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+[TestNG-test-C:/src/SQA Projects/pageobjectmodel-ikmanlk-2] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 130.0.6723.91 (resolved driver for Chrome 130)
+[TestNG-test-C:/src/SQA Projects/pageobjectmodel-ikmanlk-1] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 130.0.6723.91 (resolved driver for Chrome 130)
+[TestNG-test-C:/src/SQA Projects/pageobjectmodel-ikmanlk-1] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/runner/.cache/selenium/chromedriver/linux64/130.0.6723.91/chromedriver
+[TestNG-test-C:/src/SQA Projects/pageobjectmodel-ikmanlk-2] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/runner/.cache/selenium/chromedriver/linux64/130.0.6723.91/chromedriver
+Nov 05, 2024 7:47:17 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 130, returning the closest version; found: 126; Please update to a Selenium version that supports CDP version 130
+Nov 05, 2024 7:47:17 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 130, returning the closest version; found: 126; Please update to a Selenium version that supports CDP version 130
+]]></system-err>
+  </testcase>
+  <testcase name="testSearchFunctionality[designer leather bag](2)" classname="test.IkmanlkTests" time="6.137">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Entered search query: designer leather bag
+Search result heading contains the search query.
+'No results found!' message displayed for query: designer leather bag in sri lanka
+]]></system-out>
+  </testcase>
+  <testcase name="testCategoryInHomePage[Colombo, Maharagama, Electronics](1)" classname="test.IkmanlkTests" time="14.338">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Selected category: Electronics
+]]></system-out>
+  </testcase>
+  <testcase name="testSearchFunctionality[used car](3)" classname="test.IkmanlkTests" time="2.485">
+    <system-out><![CDATA[Entered search query: used car
+Search result heading contains the search query.
+Search results displayed for query: used car in sri lanka
+]]></system-out>
+  </testcase>
+  <testcase name="testSearchFunctionality[smartphone with 5G](4)" classname="test.IkmanlkTests" time="6.546">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Navigated to Ikman.lk home page.
+Selected district: Ampara
+Selected area: Ampara City
+Entered search query: smartphone with 5G
+Search result heading contains the search query.
+'No results found!' message displayed for query: smartphone with 5g in sri lanka
+]]></system-out>
+  </testcase>
+  <testcase name="testSearchFunctionality[mountain bike for sale](5)" classname="test.IkmanlkTests" time="12.764">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Entered search query: mountain bike for sale
+Search result heading contains the search query.
+Search results displayed for query: mountain bike for sale in sri lanka
+]]></system-out>
+  </testcase>
+  <testcase name="testCategoryInHomePage[Ampara, Ampara City, Vehicles](2)" classname="test.IkmanlkTests" time="3.449">
+    <system-out><![CDATA[Selected category: Vehicles
+Navigated to Ikman.lk home page.
+]]></system-out>
+  </testcase>
+  <testcase name="testSearchFunctionality[wooden dining table](6)" classname="test.IkmanlkTests" time="17.042">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Selected district: Batticaloa
+Selected area: Batticaloa City
+Entered search query: wooden dining table
+Search result heading contains the search query.
+Search results displayed for query: wooden dining table in sri lanka
+]]></system-out>
+  </testcase>
+  <testcase name="testCategoryInHomePage[Batticaloa, Batticaloa City, Property](3)" classname="test.IkmanlkTests" time="9.86">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Selected category: Property
+]]></system-out>
+  </testcase>
+  <testcase name="testSearchFunctionality[Samsung phone](7)" classname="test.IkmanlkTests" time="3.818">
+    <system-out><![CDATA[Entered search query: Samsung phone
+Search result heading contains the search query.
+Search results displayed for query: samsung phone in sri lanka
+]]></system-out>
+  </testcase>
+  <testcase name="testSearchFunctionality[long bags](8)" classname="test.IkmanlkTests" time="12.248">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Navigated to Ikman.lk home page.
+Selected district: Jaffna
+Selected area: Nallur
+Entered search query: long bags
+Search result heading contains the search query.
+'No results found!' message displayed for query: long bags in sri lanka
+]]></system-out>
+  </testcase>
+  <testcase name="testCategoryInHomePage[Jaffna, Nallur, Home &amp; Garden](4)" classname="test.IkmanlkTests" time="6.264">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Selected category: Home & Garden
+]]></system-out>
+  </testcase>
+  <testcase name="testSearchFunctionality[pizzahut](9)" classname="test.IkmanlkTests" time="2.815">
+    <system-out><![CDATA[Entered search query: pizzahut
+Search result heading contains the search query.
+'No results found!' message displayed for query: pizzahut in sri lanka
+]]></system-out>
+  </testcase>
+  <testcase name="testCategoryInHomePage[Matale, Dambulla, Electronics](5)" classname="test.IkmanlkTests" time="12.157">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Selected district: Matale
+Selected area: Dambulla
+Navigated to Ikman.lk home page.
+Selected category: Electronics
+]]></system-out>
+  </testcase>
+  <testcase name="testSearchFunctionality[waiter job](10)" classname="test.IkmanlkTests" time="10.021">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Selected district: Monaragala
+Selected area: Wellawaya
+Entered search query: waiter job
+Search result heading contains the search query.
+Search results displayed for query: waiter job in sri lanka
+]]></system-out>
+  </testcase>
+  <testcase name="testCategoryInHomePage[Monaragala, Wellawaya, Property](6)" classname="test.IkmanlkTests" time="15.555">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Selected category: Property
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[date_desc, Date: Newest on top, Electronics](1)" classname="test.IkmanlkTests" time="3.207">
+    <system-out><![CDATA[Selected category: Electronics
+Selected sort option with ID: date_desc
+Retrieved selected sort text: Date: Newest on top
+Asserting that selected sort text contains expected option text: Date: Newest on top
+]]></system-out>
+  </testcase>
+  <testcase name="testCategoryInHomePage[Puttalam, Chilaw, Vehicles](7)" classname="test.IkmanlkTests" time="18.438">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Selected district: Puttalam
+Selected area: Chilaw
+Navigated to Ikman home page.
+Selected category: Vehicles
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[date_asc, Date: Oldest on top, Electronics](2)" classname="test.IkmanlkTests" time="4.67">
+    <system-out><![CDATA[Selected category: Electronics
+Selected sort option with ID: date_asc
+Retrieved selected sort text: Date: Oldest on top
+Asserting that selected sort text contains expected option text: Date: Oldest on top
+]]></system-out>
+  </testcase>
+  <testcase name="testCategoryInHomePage[Ratnapura, Embilipitiya, Property](8)" classname="test.IkmanlkTests" time="24.556">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Selected district: Ratnapura
+Selected area: Embilipitiya
+Navigated to Ikman home page.
+Selected category: Electronics
+Selected category: Property
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[price_desc, Price: High to low, Electronics](3)" classname="test.IkmanlkTests" time="0.436">
+    <system-out><![CDATA[Selected sort option with ID: price_desc
+Retrieved selected sort text: Price: High to low
+Asserting that selected sort text contains expected option text: Price: High to low
+]]></system-out>
+  </testcase>
+  <testcase name="testCategoryInHomePage[United Arab Emirates, Dubai, Electronics](9)" classname="test.IkmanlkTests" time="27.466">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Selected district: United Arab Emirates
+Selected area: Dubai
+Navigated to Ikman home page.
+Selected category: Electronics
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[price_asc, Price: Low to high, Electronics](4)" classname="test.IkmanlkTests" time="0.746">
+    <system-out><![CDATA[Selected category: Electronics
+Selected sort option with ID: price_asc
+Retrieved selected sort text: Price: Low to high
+Asserting that selected sort text contains expected option text: Price: Low to high
+]]></system-out>
+  </testcase>
+  <testcase name="testCategoryInHomePage[Saudi Arabia, Riyadh, Property](10)" classname="test.IkmanlkTests" time="26.135">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Navigated to Ikman.lk home page.
+Selected district: Saudi Arabia
+Selected area: Riyadh
+Selected category: Property
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[date_desc, Date: Newest on top, Vehicles](5)" classname="test.IkmanlkTests" time="2.324">
+    <system-out><![CDATA[Selected category: Vehicles
+Selected sort option with ID: date_desc
+Retrieved selected sort text: Date: Newest on top
+Asserting that selected sort text contains expected option text: Date: Newest on top
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[date_asc, Date: Oldest on top, Vehicles](6)" classname="test.IkmanlkTests" time="28.404">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Navigated to Ikman home page.
+Selected category: Electronics
+Navigated to Mobile Phones category.
+Applied ad type filter: For Sale
+Applied condition filter: New
+Selected category: Vehicles
+Selected sort option with ID: date_asc
+Retrieved selected sort text: Date: Oldest on top
+Asserting that selected sort text contains expected option text: Date: Oldest on top
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMobilePhonesPage[For Sale, Apple, iPhone 12 Pro, New, 100000.0, 200000.0](1)" classname="test.IkmanlkTests" time="5.322">
+    <system-out><![CDATA[Applied price range filter: Min = 100000.0, Max = 200000.0
+Applied brand and model filters: Brand = Apple, Model = iPhone 12 Pro
+Current URL after applying filters: https://ikman.lk/en/ads/sri-lanka/mobile-phones/apple/iphone-12-pro?enum.condition=new&money.price.minimum=100000&money.price.maximum=200000&tree.brand=apple_apple-iphone-12-pro
+Verified that condition is present in the URL: enum.condition=new
+Verified that min price is present in the URL: money.price.minimum=100000
+Verified that max price is present in the URL: money.price.maximum=200000
+Verified that brand and model are present in the URL: tree.brand=apple_apple-iphone-12-pro
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMobilePhonesPage[For Sale, Samsung, Galaxy S10, New, 50000.0, 200000.0](2)" classname="test.IkmanlkTests" time="34.99">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Navigated to Ikman home page.
+Selected category: Electronics
+Navigated to Mobile Phones category.
+Applied ad type filter: For Sale
+Applied condition filter: New
+Applied price range filter: Min = 50000.0, Max = 200000.0
+Applied brand and model filters: Brand = Samsung, Model = Galaxy S10
+Current URL after applying filters: https://ikman.lk/en/ads/sri-lanka/mobile-phones/samsung/galaxy-s10?enum.condition=new&money.price.minimum=50000&money.price.maximum=200000&tree.brand=samsung_samsung-galaxy-s10
+Verified that condition is present in the URL: enum.condition=new
+Verified that min price is present in the URL: money.price.minimum=50000
+Verified that max price is present in the URL: money.price.maximum=200000
+Verified that brand and model are present in the URL: tree.brand=samsung_samsung-galaxy-s10
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[price_desc, Price: High to low, Vehicles](7)" classname="test.IkmanlkTests" time="4.436">
+    <system-out><![CDATA[Selected category: Vehicles
+Selected sort option with ID: price_desc
+Retrieved selected sort text: Price: High to low
+Asserting that selected sort text contains expected option text: Price: High to low
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMobilePhonesPage[For Sale, Samsung, Galaxy A15, null, null, 130000.0](3)" classname="test.IkmanlkTests" time="19.356">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Navigated to Ikman home page.
+Selected category: Electronics
+Navigated to Mobile Phones category.
+Applied ad type filter: For Sale
+Applied price range filter: Min = null, Max = 130000.0
+Applied brand and model filters: Brand = Samsung, Model = Galaxy A15
+Current URL after applying filters: https://ikman.lk/en/ads/sri-lanka/mobile-phones/samsung/galaxy-a15?money.price.maximum=130000&tree.brand=samsung_samsung-galaxy-a15
+Verified that max price is present in the URL: money.price.maximum=130000
+Verified that brand and model are present in the URL: tree.brand=samsung_samsung-galaxy-a15
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[price_asc, Price: Low to high, Vehicles](8)" classname="test.IkmanlkTests" time="7.769">
+    <system-out><![CDATA[Selected category: Vehicles
+Selected sort option with ID: price_asc
+Retrieved selected sort text: Price: Low to high
+Asserting that selected sort text contains expected option text: Price: Low to high
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[date_desc, Date: Newest on top, Property](9)" classname="test.IkmanlkTests" time="13.571">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Navigated to Ikman home page.
+Selected category: Electronics
+Navigated to Mobile Phones category.
+Applied ad type filter: For Sale
+Applied condition filter: New
+Selected category: Property
+Selected sort option with ID: date_desc
+Retrieved selected sort text: Date: Newest on top
+Asserting that selected sort text contains expected option text: Date: Newest on top
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMobilePhonesPage[For Sale, Xiaomi, Redmi Note 13, New, 30000.0, null](4)" classname="test.IkmanlkTests" time="3.938">
+    <system-out><![CDATA[Applied price range filter: Min = 30000.0, Max = null
+Navigated to Ikman home page.
+Applied brand and model filters: Brand = Xiaomi, Model = Redmi Note 13
+Current URL after applying filters: https://ikman.lk/en/ads/sri-lanka/mobile-phones/xiaomi/redmi-note-13?enum.condition=new&money.price.minimum=30000&tree.brand=xiaomi_xiaomi-redmi-note-13
+Verified that condition is present in the URL: enum.condition=new
+Verified that min price is present in the URL: money.price.minimum=30000
+Verified that brand and model are present in the URL: tree.brand=xiaomi_xiaomi-redmi-note-13
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[date_asc, Date: Oldest on top, Property](10)" classname="test.IkmanlkTests" time="7.792">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Selected category: Property
+Selected sort option with ID: date_asc
+Retrieved selected sort text: Date: Oldest on top
+Asserting that selected sort text contains expected option text: Date: Oldest on top
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMobilePhonesPage[For Sale, Xiaomi, null, Used, null, null](5)" classname="test.IkmanlkTests" time="11.771">
+    <system-out><![CDATA[Selected category: Electronics
+Navigated to Mobile Phones category.
+Applied ad type filter: For Sale
+Applied condition filter: Used
+Applied brand and model filters: Brand = Xiaomi, Model = null
+Current URL after applying filters: https://ikman.lk/en/ads/sri-lanka/mobile-phones/xiaomi?enum.condition=used&tree.brand=xiaomi
+Verified that condition is present in the URL: enum.condition=used
+Verified that brand is present in the URL: xiaomi
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[price_desc, Price: High to low, Property](11)" classname="test.IkmanlkTests" time="8.211">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Navigated to Ikman.lk home page.
+Selected category: Property
+Selected sort option with ID: price_desc
+Retrieved selected sort text: Price: High to low
+Asserting that selected sort text contains expected option text: Price: High to low
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[price_asc, Price: Low to high, Property](12)" classname="test.IkmanlkTests" time="12.707">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Selected category: Electronics
+Navigated to Mobile Phones category.
+Applied ad type filter: For Sale
+Applied condition filter: New
+Selected category: Property
+Selected sort option with ID: price_asc
+Retrieved selected sort text: Price: Low to high
+Asserting that selected sort text contains expected option text: Price: Low to high
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMobilePhonesPage[For Sale, Google, Pixel 7 Pro, New, 100000.0, 120000.0](6)" classname="test.IkmanlkTests" time="5.33">
+    <system-out><![CDATA[Applied price range filter: Min = 100000.0, Max = 120000.0
+Navigated to Ikman home page.
+Applied brand and model filters: Brand = Google, Model = Pixel 7 Pro
+Current URL after applying filters: https://ikman.lk/en/ads/sri-lanka/mobile-phones/google/pixel-7-pro?enum.condition=new&money.price.minimum=100000&money.price.maximum=120000&tree.brand=google_google-pixel-7-pro
+Verified that condition is present in the URL: enum.condition=new
+Verified that min price is present in the URL: money.price.minimum=100000
+Verified that max price is present in the URL: money.price.maximum=120000
+Verified that brand and model are present in the URL: tree.brand=google_google-pixel-7-pro
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[date_desc, Date: Newest on top, Home &amp; Garden](13)" classname="test.IkmanlkTests" time="5.847">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Selected category: Home & Garden
+Selected sort option with ID: date_desc
+Retrieved selected sort text: Date: Newest on top
+Asserting that selected sort text contains expected option text: Date: Newest on top
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMobilePhonesPage[For Sale, Vivo, Y93, New, 40000.0, 190000.0](7)" classname="test.IkmanlkTests" time="14.639">
+    <system-out><![CDATA[Selected category: Electronics
+Navigated to Mobile Phones category.
+Applied ad type filter: For Sale
+Navigated to Ikman home page.
+Applied condition filter: New
+Applied price range filter: Min = 40000.0, Max = 190000.0
+Applied brand and model filters: Brand = Vivo, Model = Y93
+Current URL after applying filters: https://ikman.lk/en/ads/sri-lanka/mobile-phones/vivo/y93?enum.condition=new&money.price.minimum=40000&money.price.maximum=190000&tree.brand=vivo_vivo-y93
+Verified that condition is present in the URL: enum.condition=new
+Verified that min price is present in the URL: money.price.minimum=40000
+Verified that max price is present in the URL: money.price.maximum=190000
+Verified that brand and model are present in the URL: tree.brand=vivo_vivo-y93
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[date_asc, Date: Oldest on top, Home &amp; Garden](14)" classname="test.IkmanlkTests" time="1.252">
+    <system-out><![CDATA[Selected category: Home & Garden
+Selected sort option with ID: date_asc
+Retrieved selected sort text: Date: Oldest on top
+Asserting that selected sort text contains expected option text: Date: Oldest on top
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[price_desc, Price: High to low, Home &amp; Garden](15)" classname="test.IkmanlkTests" time="13.824">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Navigated to Ikman home page.
+Selected category: Electronics
+Navigated to Mobile Phones category.
+Applied ad type filter: For Sale
+Selected category: Home & Garden
+Selected sort option with ID: price_desc
+Retrieved selected sort text: Price: High to low
+Asserting that selected sort text contains expected option text: Price: High to low
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMobilePhonesPage[For Sale, Vivo, null, Used, 40000.0, 95000.0](8)" classname="test.IkmanlkTests" time="3.623">
+    <system-out><![CDATA[Applied condition filter: Used
+Applied price range filter: Min = 40000.0, Max = 95000.0
+Applied brand and model filters: Brand = Vivo, Model = null
+Current URL after applying filters: https://ikman.lk/en/ads/sri-lanka/mobile-phones/vivo?enum.condition=used&money.price.minimum=40000&money.price.maximum=95000&tree.brand=vivo
+Verified that condition is present in the URL: enum.condition=used
+Verified that min price is present in the URL: money.price.minimum=40000
+Verified that max price is present in the URL: money.price.maximum=95000
+Verified that brand is present in the URL: vivo
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMobilePhonesPage[Wanted, null, null, null, null, null](9)" classname="test.IkmanlkTests" time="8.366">
+    <system-out><![CDATA[Navigated to Ikman.lk home page.
+Navigated to Ikman home page.
+Selected category: Electronics
+Navigated to Mobile Phones category.
+Applied ad type filter: Wanted
+Current URL after applying filters: https://ikman.lk/en/ads/sri-lanka/mobile-phones?sort=date&order=desc&buy_now=0&urgent=0&type=to_buy&page=1
+]]></system-out>
+  </testcase>
+  <testcase name="testSortOptions[price_asc, Price: Low to high, Home &amp; Garden](16)" classname="test.IkmanlkTests" time="13.211">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Selected category: Home & Garden
+Selected sort option with ID: price_asc
+Retrieved selected sort text: Price: Low to high
+Asserting that selected sort text contains expected option text: Price: Low to high
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInComputerAccessoriesPage[For Sale, New, 10000.0, 50000.0, Monitor,Software,POS, HP,Apple,TSC,EPSON](1)" classname="test.IkmanlkTests" time="40.345">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Selected category: Electronics
+Navigated to Computer Accessories category.
+Applied ad type filter: For Sale
+Applied condition filter: New
+Applied price range filter: Min = 10000.0, Max = 50000.0
+Applied item type filters: Monitor,Software,POS
+Selected category: Property
+Navigated to Land For Sale category.
+Applied ad type filter: For Sale
+Applied brand filters: HP,Apple,TSC,EPSON
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/computer-accessories/hp?enum.condition=new&money.price.minimum=10000&money.price.maximum=50000&enum.item_type=monitor,software,pos&enum.brand=hp,epson,apple,tsc
+Verified that condition is present in the URL: enum.condition=new
+Verified that min price is present in the URL: money.price.minimum=10000
+Verified that max price is present in the URL: money.price.maximum=50000
+Verified that brand is present in the URL: hp
+Verified that brand is present in the URL: apple
+Verified that brand is present in the URL: tsc
+Verified that brand is present in the URL: epson
+Verified that item type is present in the URL: monitor
+Verified that item type is present in the URL: software
+Verified that item type is present in the URL: pos
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInLandForSalePage[For Sale, 10000.0, 50000.0, 1000.0, 5000.0](1)" classname="test.IkmanlkTests" time="6.706">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Applied price range filter: Min = 10000.0, Max = 50000.0
+Applied land size filter: Min = 1000.0, Max = 5000.0
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/land-for-sale?money.price.minimum=10000&money.price.maximum=50000&numeric.size.minimum=1000&numeric.size.maximum=5000
+Verified that minimum price is present in the URL: money.price.minimum=10000
+Verified that maximum price is present in the URL: money.price.maximum=50000
+Verified that minimum land size is present in the URL: numeric.size.minimum=1000
+Verified that maximum land size is present in the URL: numeric.size.maximum=5000
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInLandForSalePage[For Sale, 20000.0, 100000.0, null, 2000.0](2)" classname="test.IkmanlkTests" time="20.706">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Selected category: Property
+Navigated to Land For Sale category.
+Applied ad type filter: For Sale
+Selected category: Electronics
+Navigated to Computer Accessories category.
+Applied ad type filter: For Sale
+Applied condition filter: Used
+Applied price range filter: Min = 20000.0, Max = 100000.0
+Applied land size filter: Min = null, Max = 2000.0
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/land-for-sale?money.price.minimum=20000&money.price.maximum=100000&numeric.size.maximum=2000
+Verified that minimum price is present in the URL: money.price.minimum=20000
+Verified that maximum price is present in the URL: money.price.maximum=100000
+Verified that maximum land size is present in the URL: numeric.size.maximum=2000
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInComputerAccessoriesPage[For Sale, Used, 20000.0, 100000.0, RAM,Mouse,Keyboard,POS, null](2)" classname="test.IkmanlkTests" time="10.555">
+    <system-out><![CDATA[Applied price range filter: Min = 20000.0, Max = 100000.0
+Navigated to Ikman home page.
+Selected category: Property
+Applied item type filters: RAM,Mouse,Keyboard,POS
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/computer-accessories?enum.condition=used&money.price.minimum=20000&money.price.maximum=100000&enum.item_type=pos,keyboard,ram,mouse
+Verified that condition is present in the URL: enum.condition=used
+Verified that min price is present in the URL: money.price.minimum=20000
+Verified that max price is present in the URL: money.price.maximum=100000
+Verified that item type is present in the URL: ram
+Verified that item type is present in the URL: mouse
+Verified that item type is present in the URL: keyboard
+Verified that item type is present in the URL: pos
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInLandForSalePage[For Sale, 30000.0, 150000.0, 500.0, null](3)" classname="test.IkmanlkTests" time="7.278">
+    <system-out><![CDATA[Navigated to Land For Sale category.
+Applied ad type filter: For Sale
+Navigated to Ikman home page.
+Applied price range filter: Min = 30000.0, Max = 150000.0
+Applied land size filter: Min = 500.0, Max = null
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/land-for-sale?money.price.minimum=30000&money.price.maximum=150000&numeric.size.minimum=500
+Verified that minimum price is present in the URL: money.price.minimum=30000
+Verified that maximum price is present in the URL: money.price.maximum=150000
+Verified that minimum land size is present in the URL: numeric.size.minimum=500
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInComputerAccessoriesPage[For Sale, New, 30000.0, 150000.0, UPS, DELL,ASUS,Kingston](3)" classname="test.IkmanlkTests" time="23.321">
+    <system-out><![CDATA[Selected category: Electronics
+Navigated to Computer Accessories category.
+Applied ad type filter: For Sale
+Navigated to Ikman home page.
+Applied condition filter: New
+Applied price range filter: Min = 30000.0, Max = 150000.0
+Applied item type filters: UPS
+Selected category: Property
+Navigated to Land For Sale category.
+Applied ad type filter: For Sale
+Applied brand filters: DELL,ASUS,Kingston
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/computer-accessories/dell?enum.condition=new&money.price.minimum=30000&money.price.maximum=150000&enum.item_type=ups&enum.brand=dell,asus,kingston
+Verified that condition is present in the URL: enum.condition=new
+Verified that min price is present in the URL: money.price.minimum=30000
+Verified that max price is present in the URL: money.price.maximum=150000
+Verified that brand is present in the URL: dell
+Verified that brand is present in the URL: asus
+Verified that brand is present in the URL: kingston
+Verified that item type is present in the URL: ups
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInLandForSalePage[For Sale, 15000.0, 200000.0, 1000.0, 1000.0](4)" classname="test.IkmanlkTests" time="5.495">
+    <system-out><![CDATA[Applied price range filter: Min = 15000.0, Max = 200000.0
+Navigated to Ikman home page.
+Applied land size filter: Min = 1000.0, Max = 1000.0
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/land-for-sale?money.price.minimum=15000&money.price.maximum=200000&numeric.size.minimum=1000&numeric.size.maximum=1000
+Verified that minimum price is present in the URL: money.price.minimum=15000
+Verified that maximum price is present in the URL: money.price.maximum=200000
+Verified that minimum land size is present in the URL: numeric.size.minimum=1000
+Verified that maximum land size is present in the URL: numeric.size.maximum=1000
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInComputerAccessoriesPage[For Sale, Used, 15000.0, 200000.0, null, Huawei](4)" classname="test.IkmanlkTests" time="14.688">
+    <system-out><![CDATA[Selected category: Electronics
+Navigated to Computer Accessories category.
+Applied ad type filter: For Sale
+Applied condition filter: Used
+Navigated to Ikman home page.
+Applied price range filter: Min = 15000.0, Max = 200000.0
+Applied brand filters: Huawei
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/computer-accessories/huawei?enum.condition=used&money.price.minimum=15000&money.price.maximum=200000&enum.brand=huawei
+Verified that condition is present in the URL: enum.condition=used
+Verified that min price is present in the URL: money.price.minimum=15000
+Verified that max price is present in the URL: money.price.maximum=200000
+Verified that brand is present in the URL: huawei
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInLandForSalePage[Wanted, null, null, null, null](5)" classname="test.IkmanlkTests" time="10.143">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Selected category: Property
+Navigated to Land For Sale category.
+Applied ad type filter: Wanted
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/land-for-sale?sort=date&order=desc&buy_now=0&urgent=0&type=to_buy&page=1
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInComputerAccessoriesPage[Wanted, null, null, null, null, null](5)" classname="test.IkmanlkTests" time="4.006">
+    <system-out><![CDATA[Selected category: Electronics
+Navigated to Computer Accessories category.
+Applied ad type filter: Wanted
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/computer-accessories?sort=date&order=desc&buy_now=0&urgent=0&type=to_buy&page=1
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInLandForSalePage[For Sale, 15000.0, null, 3000.0, 100000.0](6)" classname="test.IkmanlkTests" time="24.71">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Navigated to Ikman home page.
+Selected category: Property
+Navigated to Land For Sale category.
+Applied ad type filter: For Sale
+Selected category: Electronics
+Applied price range filter: Min = 15000.0, Max = null
+Navigated to Computer Accessories category.
+Applied land size filter: Min = 3000.0, Max = 100000.0
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/land-for-sale?money.price.minimum=15000&numeric.size.minimum=3000&numeric.size.maximum=100000
+Verified that minimum price is present in the URL: money.price.minimum=15000
+Verified that minimum land size is present in the URL: numeric.size.minimum=3000
+Verified that maximum land size is present in the URL: numeric.size.maximum=100000
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInComputerAccessoriesPage[For Sale, Used, 15000.0, null, Software, Sony](6)" classname="test.IkmanlkTests" time="9.057">
+    <system-out><![CDATA[Applied ad type filter: For Sale
+Applied condition filter: Used
+Applied price range filter: Min = 15000.0, Max = null
+Applied item type filters: Software
+Applied brand filters: Sony
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/computer-accessories/sony?enum.condition=used&money.price.minimum=15000&enum.item_type=software&enum.brand=sony
+Verified that condition is present in the URL: enum.condition=used
+Verified that min price is present in the URL: money.price.minimum=15000
+Verified that brand is present in the URL: sony
+Verified that item type is present in the URL: software
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInHouseForSalePage[For Sale, 10000.0, 50000.0, 1000.0, 5000.0, 1,3, 1,10](1)" classname="test.IkmanlkTests" time="36.254">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Navigated to Ikman home page.
+Selected category: Vehicles
+Navigated to Auto Parts & Accessories category.
+Selected ad type: For Sale
+Selected category: Property
+Navigated to Houses For Sale category.
+Selected ad type: For Sale
+Applied price range: 10000.0 - 50000.0
+Selected condition: reconditioned
+Applied price range: 10000.0 - 50000.0
+Applied house size range: 1000.0 - 5000.0
+Selected number of bedrooms: 1,3
+Selected part types: Car Audio Systems,Bumper
+Selected number of bathrooms: 1,10
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/houses-for-sale?money.price.minimum=10000&money.price.maximum=50000&numeric.house_size.minimum=1000&numeric.house_size.maximum=5000&enum.bedrooms=1,3&enum.bathrooms=1,10
+Verified minimum price in URL: money.price.minimum=10000
+Verified maximum price in URL: money.price.maximum=50000
+Verified minimum house size in URL: numeric.house_size.minimum=1000
+Verified maximum house size in URL: numeric.house_size.maximum=5000
+Verified number of bedrooms in URL: enum.bedrooms=1,3
+Verified number of bathrooms in URL: enum.bathrooms=1,10
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInAutoPartsPage[For Sale, reconditioned, 10000.0, 50000.0, Car Audio Systems,Bumper, Honda, Vezel](1)" classname="test.IkmanlkTests" time="4.386">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Selected brand: Honda, model: Vezel
+Current URL: https://ikman.lk/en/ads/sri-lanka/auto-parts-accessories/honda/vezel?money.price.minimum=10000&money.price.maximum=50000&enum.condition=reconditioned&enum.item_type=car_audio_systems,bumper&tree.brand=honda_honda-vezel
+Verified minimum price in URL: money.price.minimum=10000
+Verified maximum price in URL: money.price.maximum=50000
+Verified condition in URL: enum.condition=reconditioned
+Verified part type in URL: car_audio_systems
+Verified part type in URL: bumper
+Verified brand and model in URL: tree.brand=honda_honda-vezel
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInHouseForSalePage[For Sale, 20000.0, 100000.0, null, 2000.0, null, 2](2)" classname="test.IkmanlkTests" time="15.385">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Selected category: Property
+Navigated to Houses For Sale category.
+Selected ad type: For Sale
+Applied price range: 20000.0 - 100000.0
+Applied house size range: null - 2000.0
+Selected number of bathrooms: 2
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/houses-for-sale?money.price.minimum=20000&money.price.maximum=100000&numeric.house_size.maximum=2000&enum.bathrooms=2
+Verified minimum price in URL: money.price.minimum=20000
+Verified maximum price in URL: money.price.maximum=100000
+Verified maximum house size in URL: numeric.house_size.maximum=2000
+Verified number of bathrooms in URL: enum.bathrooms=2
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInAutoPartsPage[For Sale, used, 20000.0, 100000.0, Engines &amp; Engine Parts, Toyota, Prius](2)" classname="test.IkmanlkTests" time="20.444">
+    <system-out><![CDATA[Selected category: Vehicles
+Navigated to Auto Parts & Accessories category.
+Selected ad type: For Sale
+Navigated to Ikman home page.
+Applied price range: 20000.0 - 100000.0
+Selected condition: used
+Selected part types: Engines & Engine Parts
+Selected category: Property
+Selected brand: Toyota, model: Prius
+Current URL: https://ikman.lk/en/ads/sri-lanka/auto-parts-accessories/toyota/prius?money.price.minimum=20000&money.price.maximum=100000&enum.condition=used&enum.item_type=engines_engine_parts&tree.brand=toyota_toyota-prius
+Verified minimum price in URL: money.price.minimum=20000
+Verified maximum price in URL: money.price.maximum=100000
+Verified condition in URL: enum.condition=used
+Verified part type in URL: engines_engine_parts
+Verified brand and model in URL: tree.brand=toyota_toyota-prius
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInHouseForSalePage[For Sale, 30000.0, 150000.0, 500.0, null, 4,5, null](3)" classname="test.IkmanlkTests" time="12.045">
+    <system-out><![CDATA[Navigated to Houses For Sale category.
+Selected ad type: For Sale
+Navigated to Ikman home page.
+Applied price range: 30000.0 - 150000.0
+Applied house size range: 500.0 - null
+Selected category: Vehicles
+Selected number of bedrooms: 4,5
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/houses-for-sale?money.price.minimum=30000&money.price.maximum=150000&numeric.house_size.minimum=500&enum.bedrooms=4,5
+Verified minimum price in URL: money.price.minimum=30000
+Verified maximum price in URL: money.price.maximum=150000
+Verified minimum house size in URL: numeric.house_size.minimum=500
+Verified number of bedrooms in URL: enum.bedrooms=4,5
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInAutoPartsPage[For Sale, new, 30000.0, 150000.0, Head Light,Tail Light,Doors, Suzuki, Wagon R](3)" classname="test.IkmanlkTests" time="24.124">
+    <system-out><![CDATA[Navigated to Auto Parts & Accessories category.
+Selected ad type: For Sale
+Navigated to Ikman home page.
+Applied price range: 30000.0 - 150000.0
+Selected condition: new
+Selected part types: Head Light,Tail Light,Doors
+Selected category: Property
+Navigated to Houses For Sale category.
+Selected ad type: For Sale
+Selected brand: Suzuki, model: Wagon R
+Current URL: https://ikman.lk/en/ads/sri-lanka/auto-parts-accessories/suzuki/wagonr?money.price.minimum=30000&money.price.maximum=150000&enum.condition=new&enum.item_type=doors,head_light,tail_light&tree.brand=suzuki_suzuki-wagonr
+Verified minimum price in URL: money.price.minimum=30000
+Verified maximum price in URL: money.price.maximum=150000
+Verified condition in URL: enum.condition=new
+Verified part type in URL: head_light
+Verified part type in URL: tail_light
+Verified part type in URL: doors
+Verified brand and model in URL: tree.brand=suzuki_suzuki-wagonr
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInHouseForSalePage[For Sale, 15000.0, 200000.0, 1000.0, 1000.0, 9, 9](4)" classname="test.IkmanlkTests" time="9.625">
+    <system-out><![CDATA[Applied price range: 15000.0 - 200000.0
+Applied house size range: 1000.0 - 1000.0
+Selected number of bedrooms: 9
+Selected number of bathrooms: 9
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/houses-for-sale?money.price.minimum=15000&money.price.maximum=200000&numeric.house_size.minimum=1000&numeric.house_size.maximum=1000&enum.bedrooms=9&enum.bathrooms=9
+Verified minimum price in URL: money.price.minimum=15000
+Verified maximum price in URL: money.price.maximum=200000
+Verified minimum house size in URL: numeric.house_size.minimum=1000
+Verified maximum house size in URL: numeric.house_size.maximum=1000
+Verified number of bedrooms in URL: enum.bedrooms=9
+Verified number of bathrooms in URL: enum.bathrooms=9
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInHouseForSalePage[Wanted, null, null, null, null, null, null](5)" classname="test.IkmanlkTests" time="19.075">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Navigated to Ikman home page.
+Selected category: Vehicles
+Navigated to Auto Parts & Accessories category.
+Selected ad type: For Sale
+Selected category: Property
+Applied price range: 15000.0 - 200000.0
+Navigated to Houses For Sale category.
+Selected condition: reconditioned
+Selected ad type: Wanted
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/houses-for-sale?sort=date&order=desc&buy_now=0&urgent=0&type=to_buy&page=1
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInAutoPartsPage[For Sale, reconditioned, 15000.0, 200000.0, null, Nissan, March](4)" classname="test.IkmanlkTests" time="3.836">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Selected brand: Nissan, model: March
+Current URL: https://ikman.lk/en/ads/sri-lanka/auto-parts-accessories/nissan/march?money.price.minimum=15000&money.price.maximum=200000&enum.condition=reconditioned&tree.brand=nissan_nissan-march
+Verified minimum price in URL: money.price.minimum=15000
+Verified maximum price in URL: money.price.maximum=200000
+Verified condition in URL: enum.condition=reconditioned
+Verified brand and model in URL: tree.brand=nissan_nissan-march
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInAutoPartsPage[Wanted, null, null, null, null, null, null](5)" classname="test.IkmanlkTests" time="16.365">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Selected category: Property
+Navigated to Houses For Sale category.
+Selected ad type: For Sale
+Applied price range: 15000.0 - null
+Selected category: Vehicles
+Navigated to Auto Parts & Accessories category.
+Selected ad type: Wanted
+Current URL: https://ikman.lk/en/ads/sri-lanka/auto-parts-accessories?sort=date&order=desc&buy_now=0&urgent=0&type=to_buy&page=1
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInHouseForSalePage[For Sale, 15000.0, null, 3000.0, 100000.0, 5,6,7, 8,9,10](6)" classname="test.IkmanlkTests" time="4.443">
+    <system-out><![CDATA[Applied house size range: 3000.0 - 100000.0
+Selected number of bedrooms: 5,6,7
+Selected number of bathrooms: 8,9,10
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/houses-for-sale?money.price.minimum=15000&numeric.house_size.minimum=3000&numeric.house_size.maximum=100000&enum.bedrooms=5,6,7&enum.bathrooms=8,9,10
+Verified minimum price in URL: money.price.minimum=15000
+Verified minimum house size in URL: numeric.house_size.minimum=3000
+Verified maximum house size in URL: numeric.house_size.maximum=100000
+Verified number of bedrooms in URL: enum.bedrooms=5,6,7
+Verified number of bathrooms in URL: enum.bathrooms=8,9,10
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInAutoPartsPage[For Sale, null, 15000.0, null, Lighting &amp; Indicators, BMW, null](6)" classname="test.IkmanlkTests" time="19.684">
+    <system-out><![CDATA[Navigated to Ikman home page.
+Navigated to Ikman.lk Home Page
+Selected category: Vehicles
+Navigated to Auto Parts & Accessories category.
+Selected ad type: For Sale
+Applied price range: 15000.0 - null
+Selected category: Vehicles
+Navigated to Motorbikes page
+Applied Ad Type filter: For Sale
+Selected part types: Lighting & Indicators
+Selected brand: BMW, model: null
+Current URL: https://ikman.lk/en/ads/sri-lanka/auto-parts-accessories/bmw?money.price.minimum=15000&enum.item_type=lighting_indicators&tree.brand=bmw
+Verified minimum price in URL: money.price.minimum=15000
+Verified part type in URL: lighting_indicators
+Verified brand in URL: tree.brand=bmw
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMotorBikesPage[For Sale, Motorbikes, reconditioned, 10000.0, 50000.0, Bajaj, CT100, 2019.0, 2022.0, 40000.0, 60000.0](1)" classname="test.IkmanlkTests" time="11.898">
+    <system-out><![CDATA[Set price range filter: min = 10000.0, max = 50000.0
+Applied Condition filter: reconditioned
+Applied Bike Types filter: [Motorbikes]
+Navigated to Ikman.lk Home Page
+Set year of manufacture range: min = 2019.0, max = 2022.0
+Set mileage range: min = 40000.0, max = 60000.0
+Selected category: Home & Garden
+Navigated to Furniture page
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/motorbikes-scooters/bajaj/ct100?money.price.minimum=10000&money.price.maximum=50000&enum.condition=reconditioned&enum.item_type=motorbikes&numeric.model_year.minimum=2019&numeric.model_year.maximum=2022&numeric.mileage.minimum=40000&numeric.mileage.maximum=60000&tree.brand=bajaj_bajaj-ct100
+Verified minimum price in URL: money.price.minimum=10000
+Verified maximum price in URL: money.price.maximum=50000
+Verified minimum year of manufacture in URL: numeric.model_year.minimum=2019
+Verified maximum year of manufacture in URL: numeric.model_year.maximum=2022
+Verified minimum mileage in URL: numeric.mileage.minimum=40000
+Verified maximum mileage in URL: numeric.mileage.maximum=60000
+Verified condition in URL: enum.condition=reconditioned
+Verified bike type in URL: motorbikes
+Verified brand and model in URL: tree.brand=bajaj_bajaj-ct100
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInFurniturePage[For Sale, New, 10000.0, 50000.0, Bedroom Furniture,Shelves &amp; Pantry Cupboards, Arpico](1)" classname="test.IkmanlkTests" time="16.741">
+    <system-out><![CDATA[Selected ad type: For Sale
+Navigated to Ikman.lk Home Page
+Set price range from 10000.0 to 50000.0
+Selected condition: New
+Selected category: Vehicles
+Selected furniture types: [Bedroom Furniture, Shelves & Pantry Cupboards]
+Navigated to Motorbikes page
+Applied Ad Type filter: For Sale
+Selected brands: [Arpico]
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/furniture/arpico?money.price.minimum=10000&money.price.maximum=50000&enum.condition=new&enum.item_type=bedroom,storage&enum.brand=arpico
+Verified min price in URL: money.price.minimum=10000
+Verified max price in URL: money.price.maximum=50000
+Verified condition in URL: enum.condition=new
+Verified furniture type in URL: bedroom
+Verified furniture type in URL: storage
+Verified brand in URL: arpico
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMotorBikesPage[For Sale, Scooters, used, 20000.0, 100000.0, Honda, CB Shine, null, 2019.0, 30000.0, 50000.0](2)" classname="test.IkmanlkTests" time="18.384">
+    <system-out><![CDATA[Navigated to Ikman.lk Home Page
+Set price range filter: min = 20000.0, max = 100000.0
+Applied Condition filter: used
+Applied Bike Types filter: [Scooters]
+Set year of manufacture range: min = null, max = 2019.0
+Set mileage range: min = 30000.0, max = 50000.0
+Selected category: Home & Garden
+Navigated to Furniture page
+Selected ad type: For Sale
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/motorbikes-scooters/honda/cb-shine?money.price.minimum=20000&money.price.maximum=100000&enum.condition=used&enum.item_type=scooters&numeric.model_year.maximum=2019&numeric.mileage.minimum=30000&numeric.mileage.maximum=50000&tree.brand=honda_honda-cb-shine
+Verified minimum price in URL: money.price.minimum=20000
+Verified maximum price in URL: money.price.maximum=100000
+Verified maximum year of manufacture in URL: numeric.model_year.maximum=2019
+Verified minimum mileage in URL: numeric.mileage.minimum=30000
+Verified maximum mileage in URL: numeric.mileage.maximum=50000
+Verified condition in URL: enum.condition=used
+Verified bike type in URL: scooters
+Verified brand and model in URL: tree.brand=honda_honda-cb-shine
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInFurniturePage[For Sale, Used, 20000.0, 100000.0, Tables &amp; Chairs,Lighting,Textiles / decoration, E H Cooray,Softlogic](2)" classname="test.IkmanlkTests" time="19.191">
+    <system-out><![CDATA[Navigated to Ikman.lk Home Page
+Set price range from 20000.0 to 100000.0
+Selected condition: Used
+Selected furniture types: [Tables & Chairs, Lighting, Textiles / decoration]
+Selected category: Vehicles
+Navigated to Motorbikes page
+Applied Ad Type filter: For Sale
+Selected brands: [E H Cooray, Softlogic]
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/furniture/softlogic?money.price.minimum=20000&money.price.maximum=100000&enum.condition=used&enum.item_type=table_chair,decoration,lightning&enum.brand=softlogic,e_h_cooray
+Verified min price in URL: money.price.minimum=20000
+Verified max price in URL: money.price.maximum=100000
+Verified condition in URL: enum.condition=used
+Verified furniture type in URL: table_chair
+Verified furniture type in URL: lightning
+Verified furniture type in URL: decoration
+Verified brand in URL: e_h_cooray
+Verified brand in URL: softlogic
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMotorBikesPage[For Sale, E-bikes, new, 30000.0, 150000.0, Hero, null, 2023.0, 2024.0, 20000.0, 35000.0](3)" classname="test.IkmanlkTests" time="7.536">
+    <system-out><![CDATA[Set price range filter: min = 30000.0, max = 150000.0
+Applied Condition filter: new
+Applied Bike Types filter: [E-bikes]
+Navigated to Ikman.lk Home Page
+Set year of manufacture range: min = 2023.0, max = 2024.0
+Set mileage range: min = 20000.0, max = 35000.0
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/motorbikes-scooters/hero?money.price.minimum=30000&money.price.maximum=150000&enum.condition=new&enum.item_type=e_bikes&numeric.model_year.minimum=2023&numeric.model_year.maximum=2024&numeric.mileage.minimum=20000&numeric.mileage.maximum=35000&tree.brand=hero
+Verified minimum price in URL: money.price.minimum=30000
+Verified maximum price in URL: money.price.maximum=150000
+Verified minimum year of manufacture in URL: numeric.model_year.minimum=2023
+Verified maximum year of manufacture in URL: numeric.model_year.maximum=2024
+Verified minimum mileage in URL: numeric.mileage.minimum=20000
+Verified maximum mileage in URL: numeric.mileage.maximum=35000
+Verified condition in URL: enum.condition=new
+Verified bike type in URL: e_bikes
+Verified brand in URL: tree.brand=hero
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMotorBikesPage[For Sale, Quadricycles, reconditioned, 15000.0, 200000.0, Yamaha, R15, 2010.0, null, null, 19000.0](4)" classname="test.IkmanlkTests" time="27.514">
+    <system-out><![CDATA[Selected category: Home & Garden
+Navigated to Ikman.lk Home Page
+Navigated to Furniture page
+Selected ad type: For Sale
+Selected category: Vehicles
+Set price range from 30000.0 to 150000.0
+Navigated to Motorbikes page
+Selected condition: New
+Applied Ad Type filter: For Sale
+Selected furniture types: [Living Room Furniture]
+Set price range filter: min = 15000.0, max = 200000.0
+Applied Condition filter: reconditioned
+Applied Bike Types filter: [Quadricycles]
+Set year of manufacture range: min = 2010.0, max = null
+Set mileage range: min = null, max = 19000.0
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/motorbikes-scooters/yamaha/r15?money.price.minimum=15000&money.price.maximum=200000&enum.condition=reconditioned&enum.item_type=quadricycles&numeric.model_year.minimum=2010&numeric.mileage.maximum=19000&tree.brand=yamaha_yamaha-r15
+Verified minimum price in URL: money.price.minimum=15000
+Verified maximum price in URL: money.price.maximum=200000
+Verified minimum year of manufacture in URL: numeric.model_year.minimum=2010
+Verified maximum mileage in URL: numeric.mileage.maximum=19000
+Verified condition in URL: enum.condition=reconditioned
+Verified bike type in URL: quadricycles
+Verified brand and model in URL: tree.brand=yamaha_yamaha-r15
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInFurniturePage[For Sale, New, 30000.0, 150000.0, Living Room Furniture, Nilkamal,Don Corolis,Nisako](3)" classname="test.IkmanlkTests" time="1.014">
+    <system-out><![CDATA[Selected brands: [Nilkamal, Don Corolis, Nisako]
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/furniture/nilkamal?money.price.minimum=30000&money.price.maximum=150000&enum.condition=new&enum.item_type=living_room&enum.brand=nilkamal,don_corolis,nisako
+Verified min price in URL: money.price.minimum=30000
+Verified max price in URL: money.price.maximum=150000
+Verified condition in URL: enum.condition=new
+Verified furniture type in URL: living_room
+Verified brand in URL: nilkamal
+Verified brand in URL: don_corolis
+Verified brand in URL: nisako
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMotorBikesPage[Wanted, null, null, null, null, null, null, null, null, null, null](5)" classname="test.IkmanlkTests" time="13.593">
+    <system-out><![CDATA[Navigated to Ikman.lk Home Page
+Navigated to Ikman.lk Home Page
+Selected category: Vehicles
+Selected category: Home & Garden
+Navigated to Motorbikes page
+Navigated to Furniture page
+Selected ad type: For Sale
+Applied Ad Type filter: Wanted
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/motorbikes-scooters?sort=date&order=desc&buy_now=0&urgent=0&type=to_buy&page=1
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInFurniturePage[For Sale, Used, 15000.0, 200000.0, Shelves &amp; Pantry Cupboards, null](4)" classname="test.IkmanlkTests" time="8.033">
+    <system-out><![CDATA[Navigated to Ikman.lk Home Page
+Set price range from 15000.0 to 200000.0
+Selected condition: Used
+Selected furniture types: [Shelves & Pantry Cupboards]
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/furniture?money.price.minimum=15000&money.price.maximum=200000&enum.condition=used&enum.item_type=storage
+Verified min price in URL: money.price.minimum=15000
+Verified max price in URL: money.price.maximum=200000
+Verified condition in URL: enum.condition=used
+Verified furniture type in URL: storage
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInFurniturePage[Wanted, null, null, null, null, null](5)" classname="test.IkmanlkTests" time="16.033">
+    <system-out><![CDATA[Selected category: Vehicles
+Navigated to Ikman.lk Home Page
+Navigated to Motorbikes page
+Applied Ad Type filter: For Sale
+Set price range filter: min = 15000.0, max = null
+Set year of manufacture range: min = 2015.0, max = 2015.0
+Selected category: Home & Garden
+Navigated to Furniture page
+Selected ad type: Wanted
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/furniture?sort=date&order=desc&buy_now=0&urgent=0&type=to_buy&page=1
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInMotorBikesPage[For Sale, null, null, 15000.0, null, TVS, Zest, 2015.0, 2015.0, 5000.0, 25000.0](6)" classname="test.IkmanlkTests" time="5.071">
+    <system-out><![CDATA[Set mileage range: min = 5000.0, max = 25000.0
+Navigated to Ikman.lk Home Page
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/motorbikes-scooters/tvs/zest?money.price.minimum=15000&numeric.model_year.minimum=2015&numeric.model_year.maximum=2015&numeric.mileage.minimum=5000&numeric.mileage.maximum=25000&tree.brand=tvs_tvs-zest
+Verified minimum price in URL: money.price.minimum=15000
+Verified minimum year of manufacture in URL: numeric.model_year.minimum=2015
+Verified maximum year of manufacture in URL: numeric.model_year.maximum=2015
+Verified minimum mileage in URL: numeric.mileage.minimum=5000
+Verified maximum mileage in URL: numeric.mileage.maximum=25000
+Verified brand and model in URL: tree.brand=tvs_tvs-zest
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInFurniturePage[For Sale, Used, 15000.0, null, null, Nippon](6)" classname="test.IkmanlkTests" time="15.702">
+    <system-out><![CDATA[Navigated to Ikman.lk Home Page
+Selected category: Home & Garden
+Navigated to Furniture page
+Selected ad type: For Sale
+Selected 'Home & Garden' category
+Navigated to 'Other Home Items' page
+Set price range from 15000.0 to null
+Selected ad type: For Sale
+Selected condition: Used
+Selected brands: [Nippon]
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/furniture/nippon?money.price.minimum=15000&enum.condition=used&enum.brand=nippon
+Verified min price in URL: money.price.minimum=15000
+Verified condition in URL: enum.condition=used
+Verified brand in URL: nippon
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInOtherHomeItemsPage[For Sale, New, 10000.0, 50000.0](1)" classname="test.IkmanlkTests" time="16.95">
+    <system-out><![CDATA[Set price range from 10000.0 to 50000.0
+Selected condition: New
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/other-home-items?money.price.minimum=10000&money.price.maximum=50000&enum.condition=new
+Verified min price in URL: money.price.minimum=10000
+Verified max price in URL: money.price.maximum=50000
+Verified condition in URL: enum.condition=new
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInOtherHomeItemsPage[For Sale, Used, 20000.0, 100000.0](2)" classname="test.IkmanlkTests" time="13.383">
+    <system-out><![CDATA[Navigated to Ikman.lk Home Page
+Selected 'Home & Garden' category
+Navigated to 'Other Home Items' page
+Selected ad type: For Sale
+Set price range from 20000.0 to 100000.0
+Selected condition: Used
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/other-home-items?money.price.minimum=20000&money.price.maximum=100000&enum.condition=used
+Verified min price in URL: money.price.minimum=20000
+Verified max price in URL: money.price.maximum=100000
+Verified condition in URL: enum.condition=used
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInOtherHomeItemsPage[For Sale, New, 30000.0, 150000.0](3)" classname="test.IkmanlkTests" time="15.317">
+    <system-out><![CDATA[Navigated to Ikman.lk Home Page
+Selected 'Home & Garden' category
+Navigated to 'Other Home Items' page
+Selected ad type: For Sale
+Set price range from 30000.0 to 150000.0
+Selected condition: New
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/other-home-items?money.price.minimum=30000&money.price.maximum=150000&enum.condition=new
+Verified min price in URL: money.price.minimum=30000
+Verified max price in URL: money.price.maximum=150000
+Verified condition in URL: enum.condition=new
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInOtherHomeItemsPage[For Sale, Used, 15000.0, 200000.0](4)" classname="test.IkmanlkTests" time="16.692">
+    <system-out><![CDATA[Navigated to Ikman.lk Home Page
+Selected 'Home & Garden' category
+Navigated to 'Other Home Items' page
+Selected ad type: For Sale
+Set price range from 15000.0 to 200000.0
+Selected condition: Used
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/other-home-items?money.price.minimum=15000&money.price.maximum=200000&enum.condition=used
+Verified min price in URL: money.price.minimum=15000
+Verified max price in URL: money.price.maximum=200000
+Verified condition in URL: enum.condition=used
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInOtherHomeItemsPage[Wanted, null, null, null](5)" classname="test.IkmanlkTests" time="9.427">
+    <system-out><![CDATA[Navigated to Ikman.lk Home Page
+Selected 'Home & Garden' category
+Navigated to 'Other Home Items' page
+Selected ad type: Wanted
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/other-home-items?sort=date&order=desc&buy_now=0&urgent=0&type=to_buy&page=1
+]]></system-out>
+  </testcase>
+  <testcase name="testFiltersInOtherHomeItemsPage[For Sale, Used, 15000.0, null](6)" classname="test.IkmanlkTests" time="11.766">
+    <system-out><![CDATA[Navigated to Ikman.lk Home Page
+Selected 'Home & Garden' category
+Navigated to 'Other Home Items' page
+Selected ad type: For Sale
+Set price range from 15000.0 to null
+Selected condition: Used
+URL after applying filters: https://ikman.lk/en/ads/sri-lanka/other-home-items?money.price.minimum=15000&enum.condition=used
+Verified min price in URL: money.price.minimum=15000
+Verified condition in URL: enum.condition=used
+]]></system-out>
+  </testcase>
+</testsuite>
